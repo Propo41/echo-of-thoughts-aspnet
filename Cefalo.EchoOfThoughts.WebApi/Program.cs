@@ -1,6 +1,7 @@
 using Cefalo.EchoOfThoughts.AppCore.Infrastructure;
-using Cefalo.EchoOfThoughts.WebApi.Middlewares;
+using Cefalo.EchoOfThoughts.WebApi.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 /**
 * In .NET 6 Microsoft has removed the Startup.cs class. they unified Startup.cs and Program.cs into one Program.cs.
@@ -27,14 +28,15 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
+} else {
+    // todo for production
 }
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
 app.MapControllers();
 
-app.UseMiddleware<GlobalExceptionMiddleware>();
+app.UseCustomExceptionHandler(app.Logger);
 
 app.Run();
