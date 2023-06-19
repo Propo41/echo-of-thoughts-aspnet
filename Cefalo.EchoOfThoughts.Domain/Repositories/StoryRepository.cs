@@ -12,16 +12,9 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
         }
 
         public async Task<Story> AddAsync(Story story) {
-            try {
-                var res = await _context.Stories.AddAsync(story);
-                var count = await _context.SaveChangesAsync();
-                Console.WriteLine(count);
-                return res.Entity;
-            } catch (Exception ex) {
-                Console.WriteLine(ex);
-                return null;
-            }
-
+            var res = await _context.Stories.AddAsync(story);
+            await _context.SaveChangesAsync();
+            return res.Entity;
         }
 
         public async Task<IEnumerable<Story>> FindAllAsync() {

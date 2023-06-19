@@ -12,8 +12,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
         }
 
         public async Task<Story> Create(Story story) {
-            var res = await _storyRepository.AddAsync(story);
-            return res;
+            return await _storyRepository.AddAsync(story);
         }
 
         public Task<IEnumerable<Story>> GetAll() {
