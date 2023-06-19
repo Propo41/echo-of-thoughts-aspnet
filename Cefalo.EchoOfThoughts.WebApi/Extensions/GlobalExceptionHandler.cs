@@ -1,13 +1,11 @@
-﻿using Cefalo.EchoOfThoughts.Domain;
+﻿using Cefalo.EchoOfThoughts.Domain.Dto;
 using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http;
 using System.Net;
 using System.Text.Json;
-using System.Xml.Serialization;
 
 namespace Cefalo.EchoOfThoughts.WebApi.Extensions {
     public static class GlobalExceptionHandler {
-        public static void UseCustomExceptionHandler (this IApplicationBuilder app, ILogger logger) {
+        public static void UseGlobalExceptionHandler(this IApplicationBuilder app, ILogger logger) {
 
             app.UseExceptionHandler(errorApp => {
                 errorApp.Run(async context => {

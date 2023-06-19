@@ -1,8 +1,7 @@
-using Cefalo.EchoOfThoughts.AppCore.Infrastructure;
 using Cefalo.EchoOfThoughts.WebApi.Extensions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-
+using Cefalo.EchoOfThoughts.Domain;
+using Cefalo.EchoOfThoughts.AppCore;
 /**
 * In .NET 6 Microsoft has removed the Startup.cs class. they unified Startup.cs and Program.cs into one Program.cs.
 * Just go to the program.cs 
@@ -20,7 +19,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-      options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+      options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")),
+      contextLifetime: ServiceLifetime.Singleton);
+
+// DI
+builder.Services.RegisterRepositories();
+builder.Services.RegisterServices();
 
 var app = builder.Build();
 
@@ -37,6 +41,6 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-app.UseCustomExceptionHandler(app.Logger);
+app.UseGlobalExceptionHandler(app.Logger);
 
 app.Run();
