@@ -13,12 +13,16 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
             _storyService = storyService;
         }
 
-        [HttpPost]
-        public Story PostAsync(Story story) {
-            Console.WriteLine(story.ToString());
-            return story;
+        [HttpGet]
+        public async Task<IEnumerable<Story>> GetAllAsync() {
+            var res = await _storyService.GetAll();
+            return res;
         }
 
-
+        [HttpPost]
+        public async Task<Story> PostAsync([FromBody] Story story) {
+            var res = await _storyService.Create(story);
+            return res;
+        }
     }
 }

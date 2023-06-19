@@ -16,16 +16,8 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             return res;
         }
 
-        public Task<Story> Delete(Story story) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Story> Get(Story story) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Story> Update(Story story) {
-            throw new NotImplementedException();
+        public Task<IEnumerable<Story>> GetAll() {
+            return _storyRepository.FindAllAsync();
         }
     }
 }

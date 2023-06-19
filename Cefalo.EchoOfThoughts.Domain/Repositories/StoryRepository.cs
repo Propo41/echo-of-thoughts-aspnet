@@ -1,7 +1,6 @@
 ﻿using Cefalo.EchoOfThoughts.Domain.Entities;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using System;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cefalo.EchoOfThoughts.Domain.Repositories {
     public class StoryRepository : IStoryRepository {
@@ -13,24 +12,21 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
         }
 
         public async Task<Story> AddAsync(Story story) {
-            var res = await _context.Stories.AddAsync(story);
-            return res.Entity;
+            try {
+                var res = await _context.Stories.AddAsync(story);
+                var count = await _context.SaveChangesAsync();
+                Console.WriteLine(count);
+                return res.Entity;
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+                return null;
+            }
+
         }
 
-        public Task<Story> DeleteAsync(int id) {
-            throw new NotImplementedException();
+        public async Task<IEnumerable<Story>> FindAllAsync() {
+            return await _context.Stories.ToListAsync();
         }
 
-        public Task<IEnumerable<Story>> FindAllAsync() {
-            throw new NotImplementedException();
-        }
-
-        public Task<Story> FindByIdAsync(int id) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Story> UpdateAsync(Story story) {
-            throw new NotImplementedException();
-        }
     }
 }
