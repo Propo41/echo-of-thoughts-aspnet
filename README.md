@@ -30,5 +30,8 @@ Before starting, make sure you have the following installed on your machine:
 }
 ```
 
+## References
+- https://learn.microsoft.com/en-us/aspnet/core/web-api/advanced/formatting?view=aspnetcore-6.0
+
 3. Build and run the project
 
