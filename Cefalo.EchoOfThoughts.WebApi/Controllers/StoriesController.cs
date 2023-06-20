@@ -14,20 +14,30 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
             _logger = logger;
         }
 
+        // GET api/stories
         [HttpGet]
         public async Task<IEnumerable<Story>> GetAllAsync() {
             return await _storyService.GetAll();
         }
 
+        // GET api/stories/{id}
         [HttpGet("{id}")]
         public async Task<Story> Get(int id) {
             var story = await _storyService.FindById(id);
             return story;
         }
 
+        // POST api/stories
         [HttpPost]
         public async Task<Story> PostAsync([FromBody] Story story) {
             return await _storyService.Create(story);
         }
+
+        // PUT api/stories/{id}
+        [HttpPut("{id}")]
+        public async Task<Story> UpdateAsync(int id, [FromBody] Story story) {
+            return await _storyService.Update(id, story);
+        }
+
     }
 }
