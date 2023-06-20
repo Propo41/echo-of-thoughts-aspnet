@@ -1,7 +1,7 @@
 using Cefalo.EchoOfThoughts.WebApi.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Cefalo.EchoOfThoughts.Domain;
-using Cefalo.EchoOfThoughts.AppCore;
+using Cefalo.EchoOfThoughts.WebApi;
 /**
 * In .NET 6 Microsoft has removed the Startup.cs class. they unified Startup.cs and Program.cs into one Program.cs.
 * Just go to the program.cs 
@@ -14,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddXmlSerializerFormatters();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

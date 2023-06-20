@@ -20,6 +20,12 @@ namespace Cefalo.EchoOfThoughts.WebApi.Extensions {
                     ErrorResponse? errorResponse = null;
 
                     switch (exception) {
+                        case InvalidOperationException ex:
+                            errorResponse = new ErrorResponse {
+                                StatusCode = (int) HttpStatusCode.NotFound,
+                                Value = ex.Message,
+                            };
+                            break;
                         case UnauthorizedAccessException ex:
                             errorResponse = new ErrorResponse {
                                 StatusCode = (int) HttpStatusCode.Forbidden,

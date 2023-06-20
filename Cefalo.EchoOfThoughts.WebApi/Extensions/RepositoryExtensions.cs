@@ -1,8 +1,7 @@
 ﻿using Cefalo.EchoOfThoughts.Domain.Repositories;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace Cefalo.EchoOfThoughts.Domain {
+namespace Cefalo.EchoOfThoughts.WebApi {
     public static class RepositoryExtensions {
 
         public static IServiceCollection RegisterRepositories(this IServiceCollection services) {
@@ -10,7 +9,5 @@ namespace Cefalo.EchoOfThoughts.Domain {
 
             return services;
         }
-
-
     }
 }

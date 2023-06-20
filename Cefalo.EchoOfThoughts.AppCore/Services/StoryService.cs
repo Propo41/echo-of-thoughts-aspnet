@@ -15,6 +15,10 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             return await _storyRepository.AddAsync(story);
         }
 
+        public async Task<Story> FindById(int id) {
+            return await _storyRepository.FindById(id);
+        }
+
         public Task<IEnumerable<Story>> GetAll() {
             return _storyRepository.FindAllAsync();
         }
