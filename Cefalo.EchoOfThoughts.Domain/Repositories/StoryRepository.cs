@@ -18,8 +18,22 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
         }
 
         public async Task<IEnumerable<Story>> FindAllAsync() {
-            return await _context.Stories.ToListAsync();
+            return await _context.Stories
+                .AsNoTracking()
+                .ToListAsync();
         }
 
+        public async Task<Story> FindById(int id) {
+            var story = await _context.Stories
+                .AsNoTracking()
+                .FirstAsync(x => x.Id == id);
+            return story;
+        }
+
+        public async Task<Story> Update(Story story) {
+            var updatedStory = _context.Stories.Update(story);
+            await _context.SaveChangesAsync();
+            return updatedStory.Entity;
+        }
     }
 }
