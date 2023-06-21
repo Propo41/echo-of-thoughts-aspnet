@@ -1,4 +1,7 @@
-﻿using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
+﻿using AutoMapper;
+using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
+using Cefalo.EchoOfThoughts.AppCore.Helpers;
+using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
 using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
 using Cefalo.EchoOfThoughts.Domain.Entities;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
@@ -7,38 +10,52 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
     public class StoryService : IStoryService {
 
         private readonly IStoryRepository _storyRepository;
+        private readonly IMapper _mapper;
 
-        public StoryService(IStoryRepository storyRepository) {
+
+        public StoryService(IStoryRepository storyRepository, IMapper mapper) {
+            _mapper = mapper;
             _storyRepository = storyRepository;
         }
 
-        public async Task<Story> Create(Story story) {
-            return await _storyRepository.AddAsync(story);
+        public async Task<StoryDto> Create(StoryDto storyDto) {
+            var storyEntity = _mapper.Map<Story>(storyDto);
+            var createdStory = await _storyRepository.AddAsync(storyEntity);
+            return _mapper.Map<StoryDto>(createdStory);
         }
 
-        public async Task<Story> FindById(int id) {
+        public async Task<StoryDto> FindById(int id) {
             var story = await _storyRepository.FindById(id);
-            if (story == null) {
-                throw new NotFoundException("No story is associated with the given id");
-            }
-            return story;
+            return story == null
+                ? throw new NotFoundException("No story is associated with the given id")
+                : _mapper.Map<StoryDto>(story);
         }
 
-        public Task<IEnumerable<Story>> GetAll() {
-            return _storyRepository.FindAllAsync();
+        public async Task<IEnumerable<StoryDto>> GetAll() {
+            var stories = await _storyRepository.FindAllAsync();
+            return _mapper.Map<IEnumerable<StoryDto>>(stories);
         }
 
-        public async Task<Story> Update(int id, Story story) {
-            if (id != story.Id) {
-                throw new BadRequestException("Id mismatch");
-            }
-
+        public async Task<StoryDto> Update(int id, StoryUpdateDto storyDto) {
             var existingStory = await _storyRepository.FindById(id);
-            if (existingStory == null || existingStory.Id != id) {
+            if (existingStory == null) {
                 throw new NotFoundException("No story is associated with the given id");
             }
-            return await _storyRepository.Update(story);
+            var storyEntity = _mapper.Map<Story>(storyDto);
+            storyEntity.Id = id;
+            storyEntity.PublishedDate = existingStory.PublishedDate;
+            var story = await _storyRepository.Update(storyEntity);
+            return _mapper.Map<StoryDto>(story);
         }
 
+        public async Task<Payload> DeleteById(int id) {
+            var existingStory = await _storyRepository.FindById(id);
+            if (existingStory == null) {
+                throw new NotFoundException("No story is associated with the given id");
+            }
+
+            await _storyRepository.DeleteAsync(existingStory);
+            return new Payload("Deleted successfully");
+        }
     }
 }

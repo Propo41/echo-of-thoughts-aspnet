@@ -2,6 +2,8 @@ using Cefalo.EchoOfThoughts.WebApi.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Cefalo.EchoOfThoughts.Domain;
 using Cefalo.EchoOfThoughts.WebApi;
+using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
+using AutoMapper;
 /**
 * In .NET 6 Microsoft has removed the Startup.cs class. they unified Startup.cs and Program.cs into one Program.cs.
 * Just go to the program.cs 
@@ -19,6 +21,9 @@ builder.Services.AddControllers().AddXmlSerializerFormatters();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>();
+// services.AddAutoMapper(typeof(StoryMappingProfile), typeof(ProfileTypeFromAssembly2) /*, ...*/);
+builder.Services.AddAutoMapper(typeof(StoryMappingProfile));
+
 // DI
 builder.Services.RegisterRepositories();
 builder.Services.RegisterServices();
@@ -26,7 +31,7 @@ builder.Services.RegisterServices();
 var app = builder.Build();
 
 
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline.     
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();

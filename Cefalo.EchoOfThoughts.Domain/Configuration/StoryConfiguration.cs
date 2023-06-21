@@ -16,7 +16,7 @@ namespace Cefalo.EchoOfThoughts.Domain.Configuration {
                 .HasMaxLength(5000);
             builder.Property(e => e.PublishedDate)
                 .HasColumnType("datetime2")
-                .HasDefaultValueSql("GETDATE()");
+                .HasDefaultValueSql("GETUTCDATE()");
         }
     }
 }

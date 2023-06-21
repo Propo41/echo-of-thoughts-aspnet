@@ -35,5 +35,10 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
             await _context.SaveChangesAsync();
             return updatedStory.Entity;
         }
+
+        public async Task<int> DeleteAsync(Story story) {
+            _context.Stories.Remove(story);
+            return await _context.SaveChangesAsync();
+        }
     }
 }
