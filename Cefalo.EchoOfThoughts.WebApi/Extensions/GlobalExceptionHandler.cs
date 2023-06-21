@@ -1,4 +1,5 @@
-﻿using Cefalo.EchoOfThoughts.Domain.Dto;
+﻿using Cefalo.EchoOfThoughts.AppCore.Helpers;
+using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using System.Net;
 using System.Text.Json;
@@ -10,7 +11,6 @@ namespace Cefalo.EchoOfThoughts.WebApi.Extensions {
             app.UseExceptionHandler(errorApp => {
                 errorApp.Run(async context => {
                     context.Response.ContentType = "application/json";
-                    context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
 
                     var error = context.Features.Get<IExceptionHandlerFeature>();
                     var exception = error?.Error;
@@ -20,6 +20,20 @@ namespace Cefalo.EchoOfThoughts.WebApi.Extensions {
                     ErrorResponse? errorResponse = null;
 
                     switch (exception) {
+                        case NotFoundException ex:
+                            errorResponse = new ErrorResponse {
+                                StatusCode = (int) HttpStatusCode.NotFound,
+                                Value = ex.Message,
+                            };
+                            break;
+
+                        case BadRequestException ex:
+                            errorResponse = new ErrorResponse {
+                                StatusCode = (int) HttpStatusCode.BadRequest,
+                                Value = ex.Message,
+                            };
+                            break;
+
                         case InvalidOperationException ex:
                             errorResponse = new ErrorResponse {
                                 StatusCode = (int) HttpStatusCode.NotFound,

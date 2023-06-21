@@ -1,4 +1,5 @@
-﻿using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
+﻿using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
+using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
 using Cefalo.EchoOfThoughts.Domain.Entities;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
 
@@ -18,8 +19,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
         public async Task<Story> FindById(int id) {
             var story = await _storyRepository.FindById(id);
             if (story == null) {
-                // todo: throw NotFoundException() 
-                throw new Exception();
+                throw new NotFoundException("No story is associated with the given id");
             }
             return story;
         }
@@ -30,15 +30,12 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
 
         public async Task<Story> Update(int id, Story story) {
             if (id != story.Id) {
-                // todo: throw BadRequestException()
-                throw new Exception();
+                throw new BadRequestException("Id mismatch");
             }
 
             var existingStory = await _storyRepository.FindById(id);
             if (existingStory == null || existingStory.Id != id) {
-                // todo: throw NotFoundException() 
-                throw new Exception();
-
+                throw new NotFoundException("No story is associated with the given id");
             }
             return await _storyRepository.Update(story);
         }
