@@ -1,7 +1,7 @@
-using Cefalo.EchoOfThoughts.AppCore.Infrastructure;
-using Cefalo.EchoOfThoughts.WebApi.Middlewares;
+using Cefalo.EchoOfThoughts.WebApi.Extensions;
 using Microsoft.EntityFrameworkCore;
-
+using Cefalo.EchoOfThoughts.Domain;
+using Cefalo.EchoOfThoughts.AppCore;
 /**
 * In .NET 6 Microsoft has removed the Startup.cs class. they unified Startup.cs and Program.cs into one Program.cs.
 * Just go to the program.cs 
@@ -18,23 +18,32 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-      options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ApplicationDbContext>();
+// DI
+builder.Services.RegisterRepositories();
+builder.Services.RegisterServices();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    // adding migration programatically
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    db.Database.Migrate();
+} else {
+    // todo for production
 }
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
 app.MapControllers();
 
-app.UseMiddleware<GlobalExceptionMiddleware>();
+app.UseGlobalExceptionHandler(app.Logger);
 
 app.Run();
