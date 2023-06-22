@@ -6,6 +6,7 @@ namespace Cefalo.EchoOfThoughts.WebApi {
 
         public static IServiceCollection RegisterRepositories(this IServiceCollection services) {
             services.AddScoped<IStoryRepository, StoryRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             return services;
         }

@@ -1,9 +1,7 @@
-﻿using AutoMapper;
-using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
+﻿using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
 using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
-using Cefalo.EchoOfThoughts.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
@@ -24,7 +22,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         }
 
         // GET api/stories/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<StoryDto> Get(int id) {
             var story = await _storyService.FindById(id);
             return story;
@@ -37,7 +35,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         }
 
         // PUT api/stories/{id}
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<StoryDto> UpdateAsync(int id, [FromBody] StoryUpdateDto updateDto) {
             if (updateDto == null) {
                 throw new BadRequestException("No body provided for update");
@@ -45,7 +43,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
             return await _storyService.Update(id, updateDto);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<Payload> DeleteAsync(int id) {
             return await _storyService.DeleteById(id);
         }

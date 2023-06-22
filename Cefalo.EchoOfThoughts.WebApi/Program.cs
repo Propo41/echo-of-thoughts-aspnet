@@ -3,26 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Cefalo.EchoOfThoughts.Domain;
 using Cefalo.EchoOfThoughts.WebApi;
 using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
-using AutoMapper;
-/**
-* In .NET 6 Microsoft has removed the Startup.cs class. they unified Startup.cs and Program.cs into one Program.cs.
-* Just go to the program.cs 
-* file and there you can add a connection string then you've to use builder.Services.AddDbContext 
-* The old way is services.AddDbContext. Just use builder.Services and then you can achieve what you want.
-* https://stackoverflow.com/questions/70952271/startup-cs-class-is-missing-in-net-6
-*/
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Services
 builder.Services.AddControllers().AddXmlSerializerFormatters();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>();
-// services.AddAutoMapper(typeof(StoryMappingProfile), typeof(ProfileTypeFromAssembly2) /*, ...*/);
-builder.Services.AddAutoMapper(typeof(StoryMappingProfile));
+builder.Services.AddAutoMapper(typeof(StoryMappingProfile), typeof(UserMappingProfile));
 
 // DI
 builder.Services.RegisterRepositories();
