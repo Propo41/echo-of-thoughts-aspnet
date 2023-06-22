@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Cefalo.EchoOfThoughts.AppCore.Dtos.User;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
@@ -23,34 +24,55 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
 
             var res = await _userRepository.CreateAsync(user);
             return _mapper.Map<UserDto>(res);
-
         }
 
-        public Task<IEnumerable<UserDto>> GetAll() {
-            throw new NotImplementedException();
+        public async Task<IEnumerable<UserDto>> GetAll() {
+            var users = await _userRepository.FindAllAsync();
+            return _mapper.Map<IEnumerable<UserDto>>(users);
         }
 
-        public Task<UserDto> FindById(int id) {
-            throw new NotImplementedException();
+        public async Task<UserDto> FindById(int id) {
+            var existingUser = await _userRepository.FindById(id);
+            return _mapper.Map<UserDto>(existingUser);
         }
 
-        public async Task<UserDto> Update(int id, UserUpdateDto updateDto) {
+        public async Task<UserUpdateDto> Update(int id, UserUpdateDto updateDto) {
             var existingUser = await _userRepository.FindById(id);
             if (existingUser == null) {
                 throw new NotFoundException("User not found. Try logging in again");
             }
-            var user = _mapper.Map<User>(updateDto);
-            user.Id = id;
-            var res = await _userRepository.Update(user);
-            return _mapper.Map<UserDto>(res);
+
+            updateDto.MapToModel(existingUser);
+            var res = await _userRepository.Update(existingUser);
+            return _mapper.Map<UserUpdateDto>(res);
         }
 
-        public Task<Payload> DeleteById(int id) {
-            throw new NotImplementedException();
+        public async Task<Payload> DeleteById(int id) {
+            var existingUser = await _userRepository.FindById(id);
+            if (existingUser == null) {
+                throw new NotFoundException("User not found");
+            }
+            await _userRepository.DeleteAsync(existingUser);
+            return new Payload("User deleted successfully");
         }
 
-        public Task<Payload> UpdateRole(int id, string[] roles) {
-            throw new NotImplementedException();
+        public async Task<Payload> UpdatePassword(int userId, UserPasswordDto passwordDto) {
+            var existingUser = await _userRepository.FindById(userId);
+            if (existingUser == null) {
+                throw new NotFoundException("User not found");
+            }
+            if (!passwordDto.ConfirmPassword.Equals(passwordDto.NewPassword)) {
+                throw new BadRequestException("Password's do not match");
+            }
+            var isPasswordValid = PasswordHasher.isValid(passwordDto.OldPassword, existingUser.PasswordHash);
+            if (!isPasswordValid) {
+                throw new BadRequestException("Password is incorrect");
+            }
+
+            var hashPassword = PasswordHasher.HashPassword(passwordDto.NewPassword);
+            existingUser.PasswordHash = hashPassword;
+            await _userRepository.Update(existingUser);
+            return new Payload("Password updated successfully");
         }
     }
 }

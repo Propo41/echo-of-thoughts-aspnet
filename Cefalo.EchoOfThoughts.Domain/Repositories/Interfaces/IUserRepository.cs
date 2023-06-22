@@ -7,6 +7,5 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces {
         Task<User> FindById(int id);
         Task<User> Update(User user);
         Task<int> DeleteAsync(User user);
-        Task<int> UpdateRoles(int userId, int role);
     }
 }

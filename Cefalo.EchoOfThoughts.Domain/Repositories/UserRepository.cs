@@ -15,8 +15,10 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
             return newUser.Entity;
         }
 
-        public Task<IEnumerable<User>> FindAllAsync() {
-            throw new NotImplementedException();
+        public async Task<IEnumerable<User>> FindAllAsync() {
+            return await _context.Users
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task<User> FindById(int id) {
@@ -31,12 +33,9 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
             return updatedUser.Entity;
         }
 
-        public Task<int> DeleteAsync(User user) {
-            throw new NotImplementedException();
-        }
-
-        public Task<int> UpdateRoles(int userId, int role) {
-            throw new NotImplementedException();
+        public async Task<int> DeleteAsync(User user) {
+            _context.Users.Remove(user);
+            return await _context.SaveChangesAsync();
         }
     }
 }
