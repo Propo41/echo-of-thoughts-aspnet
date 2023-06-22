@@ -82,6 +82,7 @@ namespace Cefalo.EchoOfThoughts.Domain.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<string>("PasswordHash")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PasswordUpdatedAt")

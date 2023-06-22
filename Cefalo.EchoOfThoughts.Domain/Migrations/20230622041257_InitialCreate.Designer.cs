@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cefalo.EchoOfThoughts.Domain.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230622015703_InitialCreate")]
+    [Migration("20230622041257_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -85,6 +85,7 @@ namespace Cefalo.EchoOfThoughts.Domain.Migrations
                         .HasDefaultValue(false);
 
                     b.Property<string>("PasswordHash")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PasswordUpdatedAt")

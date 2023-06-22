@@ -20,6 +20,8 @@ namespace Cefalo.EchoOfThoughts.Domain.Configuration {
             builder.Property(e => e.Role)
                 .IsRequired()
                 .HasDefaultValue(1);
+            builder.Property(e => e.PasswordHash)
+                .IsRequired();
             builder.Property(e => e.CreatedAt)
                 .HasColumnType("datetime2")
                 .HasDefaultValueSql("GETUTCDATE()");

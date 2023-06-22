@@ -8,11 +8,8 @@ using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Services {
     public class StoryService : IStoryService {
-
         private readonly IStoryRepository _storyRepository;
         private readonly IMapper _mapper;
-
-
         public StoryService(IStoryRepository storyRepository, IMapper mapper) {
             _mapper = mapper;
             _storyRepository = storyRepository;

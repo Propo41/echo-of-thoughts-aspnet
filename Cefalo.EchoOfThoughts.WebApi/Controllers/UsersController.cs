@@ -34,12 +34,14 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
             return await _userService.Create(signUpDto);
         }
 
-        // PUT api/users/{id}
-        [HttpPut("{id:int}")]
-        public async Task<UserDto> UpdateAsync(int id, [FromBody] UserUpdateDto updateDto) {
+        // PUT api/users
+        [HttpPut]
+        public async Task<UserDto> UpdateAsync([FromBody] UserUpdateDto updateDto) {
             if (updateDto == null) {
                 throw new BadRequestException("No body provided for update");
             }
+
+            var id = 4; // todo: fetch this from httpContext after authentication added
             return await _userService.Update(id, updateDto);
         }
 
