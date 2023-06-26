@@ -5,7 +5,6 @@ using Cefalo.EchoOfThoughts.Domain.Entities;
 namespace Cefalo.EchoOfThoughts.AppCore.MappingProfiles {
     public class UserMappingProfile : Profile {
         public UserMappingProfile() {
-            // Map from User Object to UserUpdateDto Object
             CreateMap<User, UserUpdateDto>()
                .ForSourceMember(x => x.Id, y => y.DoNotValidate())
                .ForSourceMember(x => x.CreatedAt, y => y.DoNotValidate())

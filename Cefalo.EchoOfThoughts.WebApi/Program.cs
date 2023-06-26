@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Cefalo.EchoOfThoughts.Domain;
 using Cefalo.EchoOfThoughts.WebApi;
 using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,7 +21,6 @@ builder.Services.RegisterAuthServices(builder.Configuration);
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.     
 if (app.Environment.IsDevelopment()) {

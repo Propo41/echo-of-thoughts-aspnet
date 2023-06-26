@@ -36,16 +36,16 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
             if (updateDto == null) {
                 throw new BadRequestException("No body provided for update");
             }
-            var id = HttpContext.User.FindFirst("Id");
-            return await _userService.Update(int.Parse(id!.Value), updateDto);
+            var id = HttpContext.User.FindFirst("Id")?.Value;
+            return await _userService.Update(int.Parse(id!), updateDto);
         }
 
         // DELETE api/users
         [HttpDelete]
         [Authorize]
         public async Task<Payload> DeleteAsync() {
-            var id = HttpContext.User.FindFirst("Id");
-            return await _userService.DeleteById(int.Parse(id!.Value));
+            var id = HttpContext.User.FindFirst("Id")?.Value;
+            return await _userService.DeleteById(int.Parse(id!));
         }
     }
 }

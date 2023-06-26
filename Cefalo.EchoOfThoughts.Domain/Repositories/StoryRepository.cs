@@ -19,11 +19,14 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
 
         public async Task<IEnumerable<Story>> FindAllAsync() {
             return await _context.Stories
+                .Include(s => s.Author)
                 .ToListAsync();
         }
 
         public async Task<Story> FindById(int id) {
             var story = await _context.Stories
+                .AsNoTracking()
+                .Include(s => s.Author) // eager loading
                 .FirstOrDefaultAsync(x => x.Id == id);
             return story;
         }

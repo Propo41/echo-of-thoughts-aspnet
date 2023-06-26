@@ -58,8 +58,8 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         [HttpPut("change-password")]
         [Authorize]
         public async Task<Payload> UpdatePasswordAsync([FromBody] UserPasswordDto passwordDto) {
-            var id = HttpContext.User.FindFirst("Id");
-            return await _authService.UpdatePassword(int.Parse(id!.Value), passwordDto);
+            var id = HttpContext.User.FindFirst("Id")?.Value;
+            return await _authService.UpdatePassword(int.Parse(id!), passwordDto);
         }
 
     }

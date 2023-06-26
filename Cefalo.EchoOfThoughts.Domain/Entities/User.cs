@@ -10,6 +10,6 @@
         public DateTime PasswordUpdatedAt { get; set; }
         public int Role { get; set; }
         public DateTime CreatedAt { get; set; }
-        public ICollection<Story> Stories { get; set; }
+        public ICollection<Story> Stories { get; set; } = new List<Story>();
     }
 }

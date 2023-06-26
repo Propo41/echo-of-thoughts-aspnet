@@ -32,12 +32,12 @@ namespace Cefalo.EchoOfThoughts.Domain.Configuration {
             builder.HasIndex(u => u.UserName).IsUnique();
             builder.HasIndex(u => u.Email).IsUnique();
 
-            // relationships
-            builder.HasMany(u => u.Stories)
-                .WithOne(s => s.Author)
-                .HasForeignKey(s => s.AuthorId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .IsRequired();
+            //// relationships
+            //builder.HasMany(u => u.Stories)
+            //    .WithOne(s => s.Author)
+            //    .HasForeignKey(s => s.AuthorId)
+            //    .OnDelete(DeleteBehavior.Cascade)
+            //    .IsRequired();
         }
     }
 }

@@ -15,8 +15,9 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             _storyRepository = storyRepository;
         }
 
-        public async Task<StoryDto> Create(StoryDto storyDto) {
+        public async Task<StoryDto> Create(int authorId, StoryDto storyDto) {
             var storyEntity = _mapper.Map<Story>(storyDto);
+            storyEntity.AuthorId = authorId;
             var createdStory = await _storyRepository.AddAsync(storyEntity);
             return _mapper.Map<StoryDto>(createdStory);
         }
@@ -33,22 +34,32 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             return _mapper.Map<IEnumerable<StoryDto>>(stories);
         }
 
-        public async Task<StoryDto> Update(int id, StoryUpdateDto storyDto) {
-            var existingStory = await _storyRepository.FindById(id);
+        public async Task<StoryDto> Update(int userId, int blogId, StoryUpdateDto storyDto) {
+            var existingStory = await _storyRepository.FindById(blogId);
             if (existingStory == null) {
                 throw new NotFoundException("No story is associated with the given id");
             }
+
+            if (!existingStory.AuthorId.Equals(userId)) {
+                throw new UnauthorizedException("You do not have the privilege to update this story");
+            }
+
             var storyEntity = _mapper.Map<Story>(storyDto);
-            storyEntity.Id = id;
+            storyEntity.Id = blogId;
             storyEntity.PublishedDate = existingStory.PublishedDate;
+            storyEntity.AuthorId = userId;
             var story = await _storyRepository.Update(storyEntity);
             return _mapper.Map<StoryDto>(story);
         }
 
-        public async Task<Payload> DeleteById(int id) {
+        public async Task<Payload> DeleteById(int id, int userId) {
             var existingStory = await _storyRepository.FindById(id);
             if (existingStory == null) {
                 throw new NotFoundException("No story is associated with the given id");
+            }
+
+            if (!existingStory.AuthorId.Equals(userId)) {
+                throw new UnauthorizedException("You do not have the privilege to delete this story");
             }
 
             await _storyRepository.DeleteAsync(existingStory);
