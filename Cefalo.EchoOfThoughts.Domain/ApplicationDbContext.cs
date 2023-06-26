@@ -13,7 +13,6 @@ namespace Cefalo.EchoOfThoughts.Domain {
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            var log = _configuration.GetConnectionString("DefaultConnection");
             optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
         }
 

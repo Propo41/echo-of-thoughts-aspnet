@@ -1,4 +1,8 @@
-﻿using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
+﻿using AutoMapper;
+using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
+using Cefalo.EchoOfThoughts.AppCore.Helpers;
+using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
+using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
 using Cefalo.EchoOfThoughts.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,7 +12,6 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
     public class StoriesController : ControllerBase {
         private readonly IStoryService _storyService;
         private readonly ILogger<StoriesController> _logger;
-
         public StoriesController(IStoryService storyService, ILogger<StoriesController> logger) {
             _storyService = storyService;
             _logger = logger;
@@ -16,27 +19,35 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
 
         // GET api/stories
         [HttpGet]
-        public async Task<IEnumerable<Story>> GetAllAsync() {
+        public async Task<IEnumerable<StoryDto>> GetAllAsync() {
             return await _storyService.GetAll();
         }
 
         // GET api/stories/{id}
         [HttpGet("{id}")]
-        public async Task<Story> Get(int id) {
+        public async Task<StoryDto> Get(int id) {
             var story = await _storyService.FindById(id);
             return story;
         }
 
         // POST api/stories
         [HttpPost]
-        public async Task<Story> PostAsync([FromBody] Story story) {
+        public async Task<StoryDto> PostAsync([FromBody] StoryDto story) {
             return await _storyService.Create(story);
         }
 
         // PUT api/stories/{id}
         [HttpPut("{id}")]
-        public async Task<Story> UpdateAsync(int id, [FromBody] Story story) {
-            return await _storyService.Update(id, story);
+        public async Task<StoryDto> UpdateAsync(int id, [FromBody] StoryUpdateDto updateDto) {
+            if (updateDto == null) {
+                throw new BadRequestException("No body provided for update");
+            }
+            return await _storyService.Update(id, updateDto);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<Payload> DeleteAsync(int id) {
+            return await _storyService.DeleteById(id);
         }
 
     }

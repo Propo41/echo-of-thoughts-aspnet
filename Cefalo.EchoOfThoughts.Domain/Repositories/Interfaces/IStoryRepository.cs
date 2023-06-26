@@ -6,5 +6,6 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces {
         Task<IEnumerable<Story>> FindAllAsync();
         Task<Story> FindById(int id);
         Task<Story> Update(Story story);
+        Task<int> DeleteAsync(Story story);
     }
 }
