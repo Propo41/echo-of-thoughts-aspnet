@@ -18,7 +18,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
         }
 
         public async Task<UserDto> Create(UserSignUpDto signUpDto) {
-            var hashPassword = PasswordHasher.HashPassword(signUpDto.Password);
+            var hashPassword = Auth.HashPassword(signUpDto.Password);
             var user = _mapper.Map<User>(signUpDto);
             user.PasswordHash = hashPassword;
 
@@ -54,25 +54,6 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             }
             await _userRepository.DeleteAsync(existingUser);
             return new Payload("User deleted successfully");
-        }
-
-        public async Task<Payload> UpdatePassword(int userId, UserPasswordDto passwordDto) {
-            var existingUser = await _userRepository.FindById(userId);
-            if (existingUser == null) {
-                throw new NotFoundException("User not found");
-            }
-            if (!passwordDto.ConfirmPassword.Equals(passwordDto.NewPassword)) {
-                throw new BadRequestException("Password's do not match");
-            }
-            var isPasswordValid = PasswordHasher.isValid(passwordDto.OldPassword, existingUser.PasswordHash);
-            if (!isPasswordValid) {
-                throw new BadRequestException("Password is incorrect");
-            }
-
-            var hashPassword = PasswordHasher.HashPassword(passwordDto.NewPassword);
-            existingUser.PasswordHash = hashPassword;
-            await _userRepository.Update(existingUser);
-            return new Payload("Password updated successfully");
         }
     }
 }

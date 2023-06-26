@@ -8,6 +8,5 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services.Interfaces {
         Task<UserDto> FindById(int id);
         Task<UserUpdateDto> Update(int id, UserUpdateDto updateDto);
         Task<Payload> DeleteById(int id);
-        Task<Payload> UpdatePassword(int userId, UserPasswordDto passwordDto); // maps string roles to int
     }
 }

@@ -16,6 +16,8 @@ builder.Services.AddAutoMapper(typeof(StoryMappingProfile), typeof(UserMappingPr
 // DI
 builder.Services.RegisterRepositories();
 builder.Services.RegisterServices();
+builder.Services.RegisterAuthServices(builder.Configuration);
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -24,7 +26,6 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
-
     // adding migration programatically
     using var scope = app.Services.CreateScope();
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
@@ -34,10 +35,9 @@ if (app.Environment.IsDevelopment()) {
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-
 app.UseGlobalExceptionHandler(app.Logger);
 
 app.Run();

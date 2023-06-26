@@ -29,6 +29,9 @@ namespace Cefalo.EchoOfThoughts.Domain.Configuration {
                 .HasColumnType("datetime2")
                 .HasDefaultValueSql("GETUTCDATE()");
 
+            builder.HasIndex(u => u.UserName).IsUnique();
+            builder.HasIndex(u => u.Email).IsUnique();
+
             // relationships
             builder.HasMany(u => u.Stories)
                 .WithOne(s => s.Author)
