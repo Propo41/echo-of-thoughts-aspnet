@@ -17,6 +17,13 @@ namespace Cefalo.EchoOfThoughts.Domain.Configuration {
             builder.Property(e => e.PublishedDate)
                 .HasColumnType("datetime2")
                 .HasDefaultValueSql("GETUTCDATE()");
+
+            // relationships
+            builder.HasOne(u => u.Author)
+                .WithMany(s => s.Stories)
+                .HasForeignKey(s => s.AuthorId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired();
         }
     }
 }
