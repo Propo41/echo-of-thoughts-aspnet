@@ -23,12 +23,13 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
                 .ToListAsync();
         }
 
-        public async Task<Story> FindById(int id) {
-            var story = await _context.Stories
-                .AsNoTracking()
-                .Include(s => s.Author) // eager loading
-                .FirstOrDefaultAsync(x => x.Id == id);
-            return story;
+        public async Task<Story> FindById(int id, bool includeAuthor = false) {
+            var storyQuery = _context.Stories.AsQueryable();
+            if (includeAuthor) {
+                storyQuery = storyQuery.Include(s => s.Author);
+            }
+
+            return await storyQuery.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<Story> Update(Story story) {
