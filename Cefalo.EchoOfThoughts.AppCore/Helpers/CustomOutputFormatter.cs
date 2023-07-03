@@ -42,7 +42,5 @@ namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
             }
             buffer.AppendLine("\n");
         }
-
-
     }
 }

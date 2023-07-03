@@ -29,8 +29,9 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
                 : _mapper.Map<StoryDto>(story);
         }
 
-        public async Task<IEnumerable<StoryDto>> GetAll() {
-            var stories = await _storyRepository.FindAllAsync();
+        public async Task<IEnumerable<StoryDto>> GetAll(int pageNumber, int pageSize) {
+            var currentPosition = (pageNumber - 1) * pageSize;
+            var stories = await _storyRepository.FindAllAsync(currentPosition, pageSize, true);
             return _mapper.Map<IEnumerable<StoryDto>>(stories);
         }
 

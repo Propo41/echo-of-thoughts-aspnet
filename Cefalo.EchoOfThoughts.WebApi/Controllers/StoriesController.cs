@@ -17,10 +17,10 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
             _logger = logger;
         }
 
-        // GET api/stories
+        // GET api/stories?pageNumber=1&pageSize=10
         [HttpGet]
-        public async Task<IEnumerable<StoryDto>> GetAllAsync() {
-            return await _storyService.GetAll();
+        public async Task<IEnumerable<StoryDto>> GetAllAsync([FromQuery] PaginationFilter filter) {
+            return await _storyService.GetAll(filter.PageNumber, filter.PageSize);
         }
 
         // GET api/stories/{id}
