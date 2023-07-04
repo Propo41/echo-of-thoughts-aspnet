@@ -4,11 +4,19 @@ using Cefalo.EchoOfThoughts.Domain;
 using Cefalo.EchoOfThoughts.WebApi;
 using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
 using System.Text.Json.Serialization;
+using Cefalo.EchoOfThoughts.AppCore.Helpers;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Services
-builder.Services.AddControllers().AddXmlSerializerFormatters();
+builder.Services.AddControllers(o => {
+    o.ReturnHttpNotAcceptable = true;
+    o.RespectBrowserAcceptHeader = true;
+    o.OutputFormatters.Add(new CustomOutputFormatter());
+})
+    .AddXmlSerializerFormatters();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>();

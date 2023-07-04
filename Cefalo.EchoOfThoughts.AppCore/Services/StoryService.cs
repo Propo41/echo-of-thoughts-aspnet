@@ -23,14 +23,15 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
         }
 
         public async Task<StoryDto> FindById(int id) {
-            var story = await _storyRepository.FindById(id);
+            var story = await _storyRepository.FindById(id, true);
             return story == null
                 ? throw new NotFoundException("No story is associated with the given id")
                 : _mapper.Map<StoryDto>(story);
         }
 
-        public async Task<IEnumerable<StoryDto>> GetAll() {
-            var stories = await _storyRepository.FindAllAsync();
+        public async Task<IEnumerable<StoryDto>> GetAll(int pageNumber, int pageSize) {
+            var currentPosition = (pageNumber - 1) * pageSize;
+            var stories = await _storyRepository.FindAllAsync(currentPosition, pageSize, true);
             return _mapper.Map<IEnumerable<StoryDto>>(stories);
         }
 
@@ -44,11 +45,11 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
                 throw new UnauthorizedException("You do not have the privilege to update this story");
             }
 
-            var storyEntity = _mapper.Map<Story>(storyDto);
-            storyEntity.Id = blogId;
-            storyEntity.PublishedDate = existingStory.PublishedDate;
-            storyEntity.AuthorId = userId;
-            var story = await _storyRepository.Update(storyEntity);
+            existingStory.Title = storyDto.Title;
+            existingStory.Body = storyDto.Body;
+
+            var story = await _storyRepository.Update(existingStory);
+
             return _mapper.Map<StoryDto>(story);
         }
 

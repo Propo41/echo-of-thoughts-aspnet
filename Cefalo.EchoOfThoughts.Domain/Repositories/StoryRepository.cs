@@ -17,18 +17,27 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
             return res.Entity;
         }
 
-        public async Task<IEnumerable<Story>> FindAllAsync() {
-            return await _context.Stories
-                .Include(s => s.Author)
-                .ToListAsync();
+        public async Task<IEnumerable<Story>> FindAllAsync(int position, int pageSize, bool includeAuthor) {
+            var storyQuery = _context.Stories.AsQueryable();
+            storyQuery = storyQuery
+                .OrderBy(d => d.PublishedDate)
+                .Skip(position)
+                .Take(pageSize);
+
+            if (includeAuthor) {
+                storyQuery = storyQuery.Include(s => s.Author);
+            }
+
+            return await storyQuery.ToListAsync();
         }
 
-        public async Task<Story> FindById(int id) {
-            var story = await _context.Stories
-                .AsNoTracking()
-                .Include(s => s.Author) // eager loading
-                .FirstOrDefaultAsync(x => x.Id == id);
-            return story;
+        public async Task<Story> FindById(int id, bool includeAuthor = false) {
+            var storyQuery = _context.Stories.AsQueryable();
+            if (includeAuthor) {
+                storyQuery = storyQuery.Include(s => s.Author);
+            }
+
+            return await storyQuery.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<Story> Update(Story story) {
