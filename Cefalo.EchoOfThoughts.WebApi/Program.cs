@@ -3,9 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Cefalo.EchoOfThoughts.Domain;
 using Cefalo.EchoOfThoughts.WebApi;
 using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
-using System.Text.Json.Serialization;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +19,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>();
 builder.Services.AddAutoMapper(typeof(StoryMappingProfile), typeof(UserMappingProfile));
+builder.Services.AddCors(o => {
+    o.AddDefaultPolicy(
+        policy => {
+            policy
+                .WithOrigins("http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowCredentials();
+        });
+});
 
 // DI
 builder.Services.RegisterRepositories();
@@ -42,8 +50,9 @@ if (app.Environment.IsDevelopment()) {
     // todo for production
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseAuthentication();
+app.UseCors();
 app.UseAuthorization();
 app.MapControllers();
 app.UseGlobalExceptionHandler(app.Logger);

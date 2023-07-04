@@ -18,14 +18,14 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             _userRepository = userRepository;
             _configuration = configuration;
         }
-        public async Task<Tuple<UserDto, string>> Create(UserSignUpDto userDto) {
+        public async Task<UserDto> Create(UserSignUpDto userDto) {
             // check if user with the email already exists
             var userByEmail = await _userRepository.FindByEmail(userDto.Email);
             if (userByEmail != null) {
                 throw new BadRequestException("An account with the email already exists!");
             }
 
-            var userByUsername = await _userRepository.FindByUsername(userDto.UserName);
+            var userByUsername = await _userRepository.Find(userDto.UserName);
             if (userByUsername != null) {
                 throw new BadRequestException("An account with the username already exists!");
             }
@@ -35,11 +35,9 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             userEntity.PasswordHash = hashPassword;
             var newUser = await _userRepository.CreateAsync(userEntity);
 
-            // create a jwt string
-            var jwtString = Auth.CreateJwt(newUser, _configuration);
             var newUserDto = _mapper.Map<UserDto>(newUser);
 
-            return new Tuple<UserDto, string>(newUserDto, jwtString);
+            return newUserDto;
         }
 
         public async Task<string> SignIn(UserSignInDto userSignDto) {
@@ -65,7 +63,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
         }
 
         public async Task<Payload> UpdatePassword(int userId, UserPasswordDto passwordDto) {
-            var existingUser = await _userRepository.FindById(userId);
+            var existingUser = await _userRepository.Find(userId);
             if (existingUser == null) {
                 throw new NotFoundException("User not found");
             }

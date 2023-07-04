@@ -8,6 +8,6 @@ namespace Cefalo.EchoOfThoughts.AppCore.Dtos.User {
         public string Email { get; set; }
         public string ProfilePicture { get; set; }
         public int Role { get; set; }
-        public ICollection<StoryDto> Stories { get; set; }
+        public ICollection<AuthoredStoryDto> Stories { get; set; }
     }
 }

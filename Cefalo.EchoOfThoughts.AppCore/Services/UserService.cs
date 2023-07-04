@@ -31,13 +31,18 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             return _mapper.Map<IEnumerable<UserDto>>(users);
         }
 
-        public async Task<UserDto> FindById(int id) {
-            var existingUser = await _userRepository.FindById(id);
+        public async Task<UserDto> Find(int id) {
+            var existingUser = await _userRepository.Find(id);
+            return _mapper.Map<UserDto>(existingUser);
+        }
+
+        public async Task<UserDto> Find(string username) {
+            var existingUser = await _userRepository.Find(username);
             return _mapper.Map<UserDto>(existingUser);
         }
 
         public async Task<UserUpdateDto> Update(int id, UserUpdateDto updateDto) {
-            var existingUser = await _userRepository.FindById(id);
+            var existingUser = await _userRepository.Find(id);
             if (existingUser == null) {
                 throw new NotFoundException("User not found. Try logging in again");
             }
@@ -48,7 +53,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
         }
 
         public async Task<Payload> DeleteById(int id) {
-            var existingUser = await _userRepository.FindById(id);
+            var existingUser = await _userRepository.Find(id);
             if (existingUser == null) {
                 throw new NotFoundException("User not found");
             }

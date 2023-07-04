@@ -19,7 +19,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
 
         // GET api/stories?pageNumber=1&pageSize=10
         [HttpGet]
-        public async Task<IEnumerable<StoryDto>> GetAllAsync([FromQuery] PaginationFilter filter) {
+        public async Task<StoriesDto> GetAllAsync([FromQuery] PaginationFilter filter) {
             return await _storyService.GetAll(filter.PageNumber, filter.PageSize);
         }
 

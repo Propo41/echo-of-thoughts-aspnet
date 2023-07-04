@@ -25,7 +25,14 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         // GET api/users/{id}
         [HttpGet("{id:int}")]
         public async Task<UserDto> Get(int id) {
-            var user = await _userService.FindById(id);
+            var user = await _userService.Find(id);
+            return user;
+        }
+
+        // GET api/users/{username}
+        [HttpGet("{username:alpha}")]
+        public async Task<UserDto> GetByUsername(string username) {
+            var user = await _userService.Find(username);
             return user;
         }
 

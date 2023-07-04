@@ -19,13 +19,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         // POST api/auth/sign-up
         [HttpPost("sign-up")]
         public async Task<UserDto> Register(UserSignUpDto signUpDto) {
-            var (userDto, jwtString) = await _authService.Create(signUpDto);
-
-            Response.Cookies.Append("session-token", jwtString, new CookieOptions {
-                Expires = DateTimeOffset.Now.AddDays(1),
-                HttpOnly = true
-            });
-
+            var userDto = await _authService.Create(signUpDto);
             return userDto;
         }
 
@@ -36,7 +30,8 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
 
             Response.Cookies.Append("session-token", jwtString, new CookieOptions {
                 Expires = DateTimeOffset.Now.AddDays(1),
-                HttpOnly = true
+                HttpOnly = false,
+                Secure = false
             });
 
             return new Payload("Sign in successful!");

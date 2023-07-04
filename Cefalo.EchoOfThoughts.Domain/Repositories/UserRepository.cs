@@ -20,19 +20,21 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
                 .ToListAsync();
         }
 
-        public async Task<User> FindById(int id) {
+        public async Task<User> Find(int id) {
             return await _context.Users
+                .Include(s => s.Stories)
                 .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
+        public async Task<User> Find(string username) {
+            return await _context.Users
+                .Include(s => s.Stories)
+                .FirstOrDefaultAsync(x => x.UserName == username);
         }
 
         public async Task<User> FindByEmail(string email) {
             return await _context.Users
                 .FirstOrDefaultAsync(x => x.Email == email);
-        }
-
-        public async Task<User> FindByUsername(string username) {
-            return await _context.Users
-                .FirstOrDefaultAsync(x => x.UserName == username);
         }
 
         public async Task<User> Update(User user) {
