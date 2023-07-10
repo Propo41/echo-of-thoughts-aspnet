@@ -4,8 +4,17 @@ using Cefalo.EchoOfThoughts.Domain;
 using Cefalo.EchoOfThoughts.WebApi;
 using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
+using Serilog;
+using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
 
 // Services
 builder.Services.AddControllers(o => {

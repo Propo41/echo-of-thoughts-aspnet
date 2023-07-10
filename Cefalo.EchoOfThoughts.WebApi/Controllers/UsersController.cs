@@ -19,12 +19,14 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         // GET api/users
         [HttpGet]
         public async Task<IEnumerable<UserDto>> GetAllAsync() {
+            _logger.LogInformation("fetching all users");
             return await _userService.GetAll();
         }
 
         // GET api/users/{id}
         [HttpGet("{id:int}")]
         public async Task<UserDto> Get(int id) {
+            _logger.LogInformation("fetching single user with id: {id}", id);
             var user = await _userService.Find(id);
             return user;
         }
@@ -32,6 +34,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         // GET api/users/{username}
         [HttpGet("{username:alpha}")]
         public async Task<UserDto> GetByUsername(string username) {
+            _logger.LogInformation("fetching user by username: {username}", username);
             var user = await _userService.Find(username);
             return user;
         }
@@ -44,6 +47,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
                 throw new BadRequestException("No body provided for update");
             }
             var id = HttpContext.User.FindFirst("Id")?.Value;
+            _logger.LogInformation("updating user with id: {id} with contents {user}", id, updateDto);
             return await _userService.Update(int.Parse(id!), updateDto);
         }
 
@@ -52,6 +56,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         [Authorize]
         public async Task<Payload> DeleteAsync() {
             var id = HttpContext.User.FindFirst("Id")?.Value;
+            _logger.LogInformation("Deleting user with id:{id}", id);
             return await _userService.DeleteById(int.Parse(id!));
         }
     }

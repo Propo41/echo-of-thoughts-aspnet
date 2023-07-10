@@ -1,0 +1,160 @@
+07-10 09:03:45 INF Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-10 09:03:46 INF Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-10 09:03:46 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-10 09:03:46 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-10 09:03:46 INF Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-10 09:03:46 INF No migrations were applied. The database is already up to date.
+07-10 09:03:46 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-10 09:03:46 INF Now listening on: http://localhost:7002
+07-10 09:03:46 INF Now listening on: http://localhost:5299
+07-10 09:03:46 INF Application started. Press Ctrl+C to shut down.
+07-10 09:03:46 INF Hosting environment: Development
+07-10 09:03:46 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.WebApi\
+07-10 09:04:02 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=4&pageSize=10 - -
+07-10 09:04:02 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:04:02 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:04:02 INF getting all stories
+07-10 09:04:03 INF Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Story] AS [s]
+07-10 09:04:03 INF Executed DbCommand (58ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Body], [t].[PublishedDate], [t].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM (
+    SELECT [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+    FROM [Story] AS [s]
+    ORDER BY [s].[PublishedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [User] AS [u] ON [t].[AuthorId] = [u].[Id]
+ORDER BY [t].[PublishedDate] DESC
+07-10 09:04:03 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto'.
+07-10 09:04:04 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 1541.5085ms
+07-10 09:04:04 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:04:04 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=4&pageSize=10 - - - 200 - application/json;+charset=utf-8 1803.8123ms
+07-10 09:08:25 INF Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-10 09:08:25 INF Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-10 09:08:25 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-10 09:08:25 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-10 09:08:25 INF Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-10 09:08:25 INF No migrations were applied. The database is already up to date.
+07-10 09:08:25 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-10 09:08:26 INF Now listening on: http://localhost:7002
+07-10 09:08:26 INF Now listening on: http://localhost:5299
+07-10 09:08:26 INF Application started. Press Ctrl+C to shut down.
+07-10 09:08:26 INF Hosting environment: Development
+07-10 09:08:26 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.WebApi\
+07-10 09:08:28 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/1 - -
+07-10 09:08:28 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:08:29 INF Route matched with {action = "Get", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] Get(Int32) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:08:29 INF fetching a single story with 1
+07-10 09:08:30 INF Executed DbCommand (89ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [Story] AS [s]
+INNER JOIN [User] AS [u] ON [s].[AuthorId] = [u].[Id]
+WHERE [s].[Id] = @__id_0
+07-10 09:08:30 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi) in 1305.751ms
+07-10 09:08:30 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:08:30 ERR An unhandled exception has occurred while executing the request.Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions.NotFoundException: No story is associated with the given id
+   at Cefalo.EchoOfThoughts.AppCore.Services.StoryService.FindById(Int32 id) in C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.AppCore\Services\StoryService.cs:line 27
+   at Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get(Int32 id) in C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.WebApi\Controllers\StoriesController.cs:line 32
+   at lambda_method10(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+
+07-10 09:08:30 ERR An unhandled exception occurred.Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions.NotFoundException: No story is associated with the given id
+   at Cefalo.EchoOfThoughts.AppCore.Services.StoryService.FindById(Int32 id) in C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.AppCore\Services\StoryService.cs:line 27
+   at Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get(Int32 id) in C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.WebApi\Controllers\StoriesController.cs:line 32
+   at lambda_method10(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+
+07-10 09:08:30 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/1 - - - 404 - application/json 1807.6413ms
+07-10 09:08:35 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/4 - -
+07-10 09:08:35 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:08:35 INF Route matched with {action = "Get", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] Get(Int32) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:08:35 INF fetching a single story with 4
+07-10 09:08:35 INF Executed DbCommand (15ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [Story] AS [s]
+INNER JOIN [User] AS [u] ON [s].[AuthorId] = [u].[Id]
+WHERE [s].[Id] = @__id_0
+07-10 09:08:35 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi) in 236.4665ms
+07-10 09:08:35 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:08:35 ERR An unhandled exception has occurred while executing the request.Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions.NotFoundException: No story is associated with the given id
+   at Cefalo.EchoOfThoughts.AppCore.Services.StoryService.FindById(Int32 id) in C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.AppCore\Services\StoryService.cs:line 27
+   at Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get(Int32 id) in C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.WebApi\Controllers\StoriesController.cs:line 32
+   at lambda_method10(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+
+07-10 09:08:35 ERR An unhandled exception occurred.Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions.NotFoundException: No story is associated with the given id
+   at Cefalo.EchoOfThoughts.AppCore.Services.StoryService.FindById(Int32 id) in C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.AppCore\Services\StoryService.cs:line 27
+   at Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get(Int32 id) in C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.WebApi\Controllers\StoriesController.cs:line 32
+   at lambda_method10(Closure , Object )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+
+07-10 09:08:35 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/4 - - - 404 - application/json 241.7494ms
+07-10 09:08:41 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/12 - -
+07-10 09:08:41 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:08:41 INF Route matched with {action = "Get", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] Get(Int32) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:08:41 INF fetching a single story with 12
+07-10 09:08:41 INF Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [Story] AS [s]
+INNER JOIN [User] AS [u] ON [s].[AuthorId] = [u].[Id]
+WHERE [s].[Id] = @__id_0
+07-10 09:08:42 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto'.
+07-10 09:08:42 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi) in 263.1598ms
+07-10 09:08:42 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:08:42 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/12 - - - 200 - text/plain;+charset=utf-8 278.4596ms
