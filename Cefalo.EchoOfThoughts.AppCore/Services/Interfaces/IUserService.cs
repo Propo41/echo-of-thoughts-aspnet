@@ -3,10 +3,10 @@ using Cefalo.EchoOfThoughts.AppCore.Helpers;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Services.Interfaces {
     public interface IUserService {
-        Task<IEnumerable<UserDto>> GetAll(string username);
-        Task<UserDto> Find(int id);
-        Task<UserDto> Find(string username);
-        Task<UserUpdateDto> Update(int id, UserUpdateDto updateDto);
-        Task<Payload> DeleteById(int id);
+        Task<IEnumerable<UserDto>> GetAllAsync(string username);
+        Task<UserDto> FindAsync(int id);
+        Task<UserDto> FindAsync(string username);
+        Task<UserUpdateDto> UpdateAsync(int id, UserUpdateDto updateDto);
+        Task<Payload> DeleteByIdAsync(int id);
     }
 }

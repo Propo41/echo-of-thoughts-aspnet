@@ -3,11 +3,8 @@ using Cefalo.EchoOfThoughts.AppCore.Helpers;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Services.Interfaces {
     public interface IAuthService {
-        Task<string> SignIn(UserSignInDto userSignDto);
-        Task<UserDto> Create(UserSignUpDto userDto);
-        Task<UserDto> FindByEmail(string email);
-        Task<Payload> Delete(int id);
-        Task<Payload> UpdatePassword(int userId, UserPasswordDto passwordDto); // maps string roles to int
-        Task<Payload> SignOut();
+        Task<string> SignInAsync(UserSignInDto userSignDto);
+        Task<UserDto> CreateAsync(UserSignUpDto userDto);
+        Task<Payload> UpdatePasswordAsync(int userId, UserPasswordDto passwordDto); // maps string roles to int
     }
 }

@@ -3,10 +3,10 @@ using Cefalo.EchoOfThoughts.AppCore.Helpers;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Services.Interfaces {
     public interface IStoryService {
-        Task<StoryDto> Create(int authorId, StoryDto storyDto);
-        Task<StoriesDto> GetAll(int pageNumber, int pageSize);
-        Task<StoryDto> FindById(int id);
-        Task<StoryDto> Update(int userId, int blogId, StoryUpdateDto updateDto);
-        Task<Payload> DeleteById(int id, int userId);
+        Task<StoryDto> CreateAsync(int authorId, StoryDto storyDto);
+        Task<StoriesDto> GetAllAsync(int pageNumber, int pageSize);
+        Task<StoryDto> FindByIdAsync(int id);
+        Task<StoryDto> UpdateAsync(int userId, int blogId, StoryUpdateDto updateDto);
+        Task<Payload> DeleteByIdAsync(int id, int userId);
     }
 }
