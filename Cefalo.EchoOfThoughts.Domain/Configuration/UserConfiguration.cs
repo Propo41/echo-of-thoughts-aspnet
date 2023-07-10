@@ -10,7 +10,7 @@ namespace Cefalo.EchoOfThoughts.Domain.Configuration {
             builder.Property(e => e.Id).IsRequired();
             builder.Property(e => e.UserName)
                  .IsRequired()
-                 .HasMaxLength(10);
+                 .HasMaxLength(30);
             builder.Property(e => e.FullName)
                 .IsRequired()
                 .HasMaxLength(30);
@@ -23,11 +23,11 @@ namespace Cefalo.EchoOfThoughts.Domain.Configuration {
             builder.Property(e => e.PasswordHash)
                 .IsRequired();
             builder.Property(e => e.CreatedAt)
-                .HasColumnType("datetime2")
-                .HasDefaultValueSql("GETUTCDATE()");
+                .IsRequired()
+                .HasColumnType("datetime2");
             builder.Property(e => e.PasswordUpdatedAt)
-                .HasColumnType("datetime2")
-                .HasDefaultValueSql("GETUTCDATE()");
+                .IsRequired()
+                .HasColumnType("datetime2");
 
             builder.HasIndex(u => u.UserName).IsUnique();
             builder.HasIndex(u => u.Email).IsUnique();

@@ -44,6 +44,8 @@ builder.Services.RegisterRepositories();
 builder.Services.RegisterServices();
 builder.Services.RegisterAuthServices(builder.Configuration);
 builder.Services.AddAuthorization();
+builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
 
 var app = builder.Build();
 

@@ -22,14 +22,14 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         [HttpGet]
         public async Task<StoriesDto> GetAllAsync([FromQuery] PaginationFilter filter) {
             _logger.LogInformation("fetching all stories");
-            return await _storyService.GetAll(filter.PageNumber, filter.PageSize);
+            return await _storyService.GetAllAsync(filter.PageNumber, filter.PageSize);
         }
 
         // GET api/stories/{id}
         [HttpGet("{id:int}")]
-        public async Task<StoryDto> Get(int id) {
+        public async Task<StoryDto> GetAsync(int id) {
             _logger.LogInformation("fetching a single story with {id}", id);
-            var story = await _storyService.FindById(id);
+            var story = await _storyService.FindByIdAsync(id);
             return story;
         }
 
@@ -39,7 +39,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         public async Task<StoryDto> PostAsync([FromBody] StoryDto story) {
             _logger.LogInformation("creating a new story: {story}", story);
             var authorId = HttpContext.User.FindFirst("Id")?.Value;
-            return await _storyService.Create(int.Parse(authorId!), story);
+            return await _storyService.CreateAsync(int.Parse(authorId!), story);
         }
 
         // PUT api/stories/{id}
@@ -51,7 +51,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
                 throw new BadRequestException("No body provided for update");
             }
             var userId = HttpContext.User.FindFirst("Id")?.Value;
-            return await _storyService.Update(int.Parse(userId!), id, updateDto);
+            return await _storyService.UpdateAsync(int.Parse(userId!), id, updateDto);
         }
 
         [HttpDelete("{id:int}")]
@@ -59,7 +59,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         public async Task<Payload> DeleteAsync(int id) {
             _logger.LogInformation("deleting story with {id}", id);
             var userId = HttpContext.User.FindFirst("Id")?.Value;
-            return await _storyService.DeleteById(id, int.Parse(userId!));
+            return await _storyService.DeleteByIdAsync(id, int.Parse(userId!));
         }
 
     }
