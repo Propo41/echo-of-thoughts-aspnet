@@ -158,3 +158,867 @@ WHERE [s].[Id] = @__id_0
 07-10 09:08:42 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi) in 263.1598ms
 07-10 09:08:42 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
 07-10 09:08:42 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/12 - - - 200 - text/plain;+charset=utf-8 278.4596ms
+07-10 09:30:56 INF Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-10 09:30:56 INF Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-10 09:30:56 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-10 09:30:56 INF Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-10 09:30:56 INF Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-10 09:30:57 INF No migrations were applied. The database is already up to date.
+07-10 09:30:57 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-10 09:30:57 INF Now listening on: http://localhost:7002
+07-10 09:30:57 INF Now listening on: http://localhost:5299
+07-10 09:30:57 INF Application started. Press Ctrl+C to shut down.
+07-10 09:30:57 INF Hosting environment: Development
+07-10 09:30:57 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.WebApi\
+07-10 09:31:00 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users application/json 165
+07-10 09:31:00 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:31:00 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:31:00 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-10 09:31:00 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 324.3961ms
+07-10 09:31:00 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:31:00 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users application/json 165 - 400 - application/problem+json;+charset=utf-8 568.8639ms
+07-10 09:31:10 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users - -
+07-10 09:31:10 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:31:10 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:31:10 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-10 09:31:10 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 5.8591ms
+07-10 09:31:10 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:31:10 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users - - - 400 - application/problem+json;+charset=utf-8 9.3312ms
+07-10 09:31:37 INF Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-10 09:31:37 INF Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-10 09:31:37 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-10 09:31:37 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-10 09:31:37 INF Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-10 09:31:37 INF No migrations were applied. The database is already up to date.
+07-10 09:31:38 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-10 09:31:38 INF Now listening on: http://localhost:7002
+07-10 09:31:38 INF Now listening on: http://localhost:5299
+07-10 09:31:38 INF Application started. Press Ctrl+C to shut down.
+07-10 09:31:38 INF Hosting environment: Development
+07-10 09:31:38 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts\Cefalo.EchoOfThoughts.WebApi\
+07-10 09:32:11 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users - -
+07-10 09:32:11 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:32:11 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:32:11 INF fetching all users
+07-10 09:32:12 INF Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+07-10 09:32:12 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:32:12 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 882.5433ms
+07-10 09:32:12 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:32:12 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users - - - 200 - application/json;+charset=utf-8 1112.8653ms
+07-10 09:33:16 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users?username=ali - -
+07-10 09:33:16 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:33:16 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:33:16 INF fetching all users
+07-10 09:33:17 INF Executed DbCommand (59ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:33:17 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:33:17 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 598.8754ms
+07-10 09:33:17 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:33:17 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users?username=ali - - - 200 - application/json;+charset=utf-8 602.7734ms
+07-10 09:34:57 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - -
+07-10 09:34:57 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:34:57 INF CORS policy execution successful.
+07-10 09:34:57 INF CORS policy execution successful.
+07-10 09:34:57 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - - - 204 - - 20.2830ms
+07-10 09:34:57 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 204 - - 20.2830ms
+07-10 09:34:57 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/tags - -
+07-10 09:34:57 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:34:57 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:34:57 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:34:57 INF CORS policy execution successful.
+07-10 09:34:57 INF CORS policy execution successful.
+07-10 09:34:57 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:34:57 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/tags - - - 404 0 - 24.6256ms
+07-10 09:34:57 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:34:57 INF fetching all stories
+07-10 09:34:57 INF Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Story] AS [s]
+07-10 09:34:57 INF Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Body], [t].[PublishedDate], [t].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM (
+    SELECT [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+    FROM [Story] AS [s]
+    ORDER BY [s].[PublishedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [User] AS [u] ON [t].[AuthorId] = [u].[Id]
+ORDER BY [t].[PublishedDate] DESC
+07-10 09:34:57 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto'.
+07-10 09:34:57 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 591.2044ms
+07-10 09:34:57 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:34:57 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 623.0755ms
+07-10 09:34:58 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/43/view - -
+07-10 09:34:58 INF CORS policy execution successful.
+07-10 09:34:58 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/43/view - - - 204 - - 0.4040ms
+07-10 09:34:58 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/42/view - -
+07-10 09:34:58 INF CORS policy execution successful.
+07-10 09:34:58 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/42/view - - - 204 - - 0.2154ms
+07-10 09:34:58 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/42/view - 0
+07-10 09:34:58 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/43/view - 0
+07-10 09:34:58 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:34:58 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:34:58 INF CORS policy execution successful.
+07-10 09:34:58 INF CORS policy execution successful.
+07-10 09:34:58 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/42/view - 0 - 404 0 - 0.4363ms
+07-10 09:34:58 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/43/view - 0 - 404 0 - 0.4187ms
+07-10 09:35:05 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/41/view - -
+07-10 09:35:05 INF CORS policy execution successful.
+07-10 09:35:05 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/41/view - - - 204 - - 0.2446ms
+07-10 09:35:05 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/41/view - 0
+07-10 09:35:05 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:35:05 INF CORS policy execution successful.
+07-10 09:35:05 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/41/view - 0 - 404 0 - 0.3296ms
+07-10 09:35:05 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/40/view - -
+07-10 09:35:05 INF CORS policy execution successful.
+07-10 09:35:05 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/40/view - - - 204 - - 0.2209ms
+07-10 09:35:05 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/40/view - 0
+07-10 09:35:05 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:35:05 INF CORS policy execution successful.
+07-10 09:35:05 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/40/view - 0 - 404 0 - 0.3217ms
+07-10 09:35:05 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38/view - -
+07-10 09:35:05 INF CORS policy execution successful.
+07-10 09:35:05 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38/view - - - 204 - - 0.2631ms
+07-10 09:35:05 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/38/view - 0
+07-10 09:35:05 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:35:05 INF CORS policy execution successful.
+07-10 09:35:05 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/38/view - 0 - 404 0 - 0.4091ms
+07-10 09:35:06 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/37/view - -
+07-10 09:35:06 INF CORS policy execution successful.
+07-10 09:35:06 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/37/view - - - 204 - - 0.3024ms
+07-10 09:35:06 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/37/view - 0
+07-10 09:35:06 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:35:06 INF CORS policy execution successful.
+07-10 09:35:06 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/37/view - 0 - 404 0 - 0.4231ms
+07-10 09:35:06 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/36/view - -
+07-10 09:35:06 INF CORS policy execution successful.
+07-10 09:35:06 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/36/view - - - 204 - - 0.2053ms
+07-10 09:35:06 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/36/view - 0
+07-10 09:35:06 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:35:06 INF CORS policy execution successful.
+07-10 09:35:06 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/36/view - 0 - 404 0 - 0.2582ms
+07-10 09:35:06 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/35/view - -
+07-10 09:35:06 INF CORS policy execution successful.
+07-10 09:35:06 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/35/view - - - 204 - - 0.2179ms
+07-10 09:35:06 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/35/view - 0
+07-10 09:35:06 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:35:06 INF CORS policy execution successful.
+07-10 09:35:06 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/35/view - 0 - 404 0 - 0.2287ms
+07-10 09:35:06 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/34/view - -
+07-10 09:35:06 INF CORS policy execution successful.
+07-10 09:35:06 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/34/view - - - 204 - - 0.2069ms
+07-10 09:35:06 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/34/view - 0
+07-10 09:35:06 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:35:06 INF CORS policy execution successful.
+07-10 09:35:06 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/34/view - 0 - 404 0 - 0.2625ms
+07-10 09:35:07 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/33/view - -
+07-10 09:35:07 INF CORS policy execution successful.
+07-10 09:35:07 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/33/view - - - 204 - - 0.2618ms
+07-10 09:35:07 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/33/view - 0
+07-10 09:35:07 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:35:07 INF CORS policy execution successful.
+07-10 09:35:07 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/33/view - 0 - 404 0 - 0.2641ms
+07-10 09:36:30 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:36:30 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - -
+07-10 09:36:30 INF CORS policy execution successful.
+07-10 09:36:30 INF CORS policy execution successful.
+07-10 09:36:30 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 204 - - 4.5901ms
+07-10 09:36:30 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - - - 204 - - 5.5178ms
+07-10 09:36:30 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:36:30 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:36:30 INF CORS policy execution successful.
+07-10 09:36:30 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:36:30 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:36:30 INF fetching all stories
+07-10 09:36:30 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/tags - -
+07-10 09:36:30 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:36:30 INF CORS policy execution successful.
+07-10 09:36:30 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/tags - - - 404 0 - 0.4248ms
+07-10 09:36:30 INF Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Story] AS [s]
+07-10 09:36:30 INF Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Body], [t].[PublishedDate], [t].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM (
+    SELECT [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+    FROM [Story] AS [s]
+    ORDER BY [s].[PublishedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [User] AS [u] ON [t].[AuthorId] = [u].[Id]
+ORDER BY [t].[PublishedDate] DESC
+07-10 09:36:30 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto'.
+07-10 09:36:30 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 109.6357ms
+07-10 09:36:30 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:36:30 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 110.5598ms
+07-10 09:36:43 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=al - -
+07-10 09:36:43 INF CORS policy execution successful.
+07-10 09:36:43 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=al - - - 204 - - 0.3283ms
+07-10 09:36:43 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=al - -
+07-10 09:36:43 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:36:43 INF CORS policy execution successful.
+07-10 09:36:43 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:36:43 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:36:43 INF fetching all users
+07-10 09:36:43 INF Executed DbCommand (10ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:36:43 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:36:43 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 465.4388ms
+07-10 09:36:43 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:36:43 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=al - - - 200 - application/json;+charset=utf-8 466.1986ms
+07-10 09:36:46 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ali - -
+07-10 09:36:46 INF CORS policy execution successful.
+07-10 09:36:46 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ali - - - 204 - - 0.3062ms
+07-10 09:36:46 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=ali - -
+07-10 09:36:46 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:36:46 INF CORS policy execution successful.
+07-10 09:36:46 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:36:46 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:36:46 INF fetching all users
+07-10 09:36:47 INF Executed DbCommand (11ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:36:47 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:36:47 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 588.8466ms
+07-10 09:36:47 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:36:47 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=ali - - - 200 - application/json;+charset=utf-8 589.8109ms
+07-10 09:39:01 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - -
+07-10 09:39:01 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:39:01 INF CORS policy execution successful.
+07-10 09:39:01 INF CORS policy execution successful.
+07-10 09:39:01 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - - - 204 - - 0.8165ms
+07-10 09:39:01 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 204 - - 0.8059ms
+07-10 09:39:01 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/tags - -
+07-10 09:39:01 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:39:01 INF CORS policy execution successful.
+07-10 09:39:01 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/tags - - - 404 0 - 0.7867ms
+07-10 09:39:01 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:39:01 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:39:01 INF CORS policy execution successful.
+07-10 09:39:01 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:39:01 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:39:01 INF fetching all stories
+07-10 09:39:01 INF Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Story] AS [s]
+07-10 09:39:01 INF Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Body], [t].[PublishedDate], [t].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM (
+    SELECT [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+    FROM [Story] AS [s]
+    ORDER BY [s].[PublishedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [User] AS [u] ON [t].[AuthorId] = [u].[Id]
+ORDER BY [t].[PublishedDate] DESC
+07-10 09:39:01 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto'.
+07-10 09:39:01 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 121.9599ms
+07-10 09:39:01 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:39:01 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 122.7448ms
+07-10 09:39:06 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ali - -
+07-10 09:39:06 INF CORS policy execution successful.
+07-10 09:39:06 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ali - - - 204 - - 0.2825ms
+07-10 09:39:06 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=ali - -
+07-10 09:39:06 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:39:06 INF CORS policy execution successful.
+07-10 09:39:06 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:39:06 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:39:06 INF fetching all users
+07-10 09:39:06 INF Executed DbCommand (9ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:39:06 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:39:06 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 72.2757ms
+07-10 09:39:06 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:39:06 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=ali - - - 200 - application/json;+charset=utf-8 72.9245ms
+07-10 09:39:12 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/undefined - -
+07-10 09:39:12 INF CORS policy execution successful.
+07-10 09:39:12 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/undefined - - - 204 - - 0.3579ms
+07-10 09:39:12 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/undefined - -
+07-10 09:39:12 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:39:12 INF CORS policy execution successful.
+07-10 09:39:12 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:39:12 INF Route matched with {action = "GetByUsername", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto] GetByUsername(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:39:12 INF fetching user by username: undefined
+07-10 09:39:12 INF Executed DbCommand (22ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedAt], [t].[Email], [t].[FullName], [t].[IsDisabled], [t].[PasswordHash], [t].[PasswordUpdatedAt], [t].[ProfilePicture], [t].[Role], [t].[UserName], [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Story] AS [s] ON [t].[Id] = [s].[AuthorId]
+ORDER BY [t].[Id]
+07-10 09:39:12 INF Executing ObjectResult, writing value of type 'null'.
+07-10 09:39:12 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi) in 184.8428ms
+07-10 09:39:12 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:39:12 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/undefined - - - 204 0 - 191.2397ms
+07-10 09:39:12 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/undefined - -
+07-10 09:39:12 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:39:12 INF CORS policy execution successful.
+07-10 09:39:12 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:39:12 INF Route matched with {action = "GetByUsername", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto] GetByUsername(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:39:12 INF fetching user by username: undefined
+07-10 09:39:12 INF Executed DbCommand (7ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedAt], [t].[Email], [t].[FullName], [t].[IsDisabled], [t].[PasswordHash], [t].[PasswordUpdatedAt], [t].[ProfilePicture], [t].[Role], [t].[UserName], [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Story] AS [s] ON [t].[Id] = [s].[AuthorId]
+ORDER BY [t].[Id]
+07-10 09:39:12 INF Executing ObjectResult, writing value of type 'null'.
+07-10 09:39:12 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi) in 26.3524ms
+07-10 09:39:12 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:39:12 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/undefined - - - 204 0 - 27.4686ms
+07-10 09:40:41 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - -
+07-10 09:40:41 INF CORS policy execution successful.
+07-10 09:40:41 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:40:41 INF CORS policy execution successful.
+07-10 09:40:41 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - - - 204 - - 18.7498ms
+07-10 09:40:41 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 204 - - 22.2264ms
+07-10 09:40:41 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:40:41 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:41 INF CORS policy execution successful.
+07-10 09:40:41 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:40:41 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:40:41 INF fetching all stories
+07-10 09:40:41 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/tags - -
+07-10 09:40:41 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:41 INF CORS policy execution successful.
+07-10 09:40:41 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/tags - - - 404 0 - 2.6504ms
+07-10 09:40:42 INF Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Story] AS [s]
+07-10 09:40:42 INF Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Body], [t].[PublishedDate], [t].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM (
+    SELECT [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+    FROM [Story] AS [s]
+    ORDER BY [s].[PublishedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [User] AS [u] ON [t].[AuthorId] = [u].[Id]
+ORDER BY [t].[PublishedDate] DESC
+07-10 09:40:42 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto'.
+07-10 09:40:42 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 412.3866ms
+07-10 09:40:42 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:40:42 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 413.6371ms
+07-10 09:40:42 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/43/view - -
+07-10 09:40:42 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/42/view - -
+07-10 09:40:42 INF CORS policy execution successful.
+07-10 09:40:42 INF CORS policy execution successful.
+07-10 09:40:42 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/43/view - - - 204 - - 0.3265ms
+07-10 09:40:42 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/42/view - - - 204 - - 0.2583ms
+07-10 09:40:42 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/43/view - 0
+07-10 09:40:42 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/42/view - 0
+07-10 09:40:42 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:42 INF CORS policy execution successful.
+07-10 09:40:42 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:42 INF CORS policy execution successful.
+07-10 09:40:42 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/43/view - 0 - 404 0 - 0.4319ms
+07-10 09:40:42 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/42/view - 0 - 404 0 - 0.4485ms
+07-10 09:40:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/41/view - -
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/41/view - - - 204 - - 0.2367ms
+07-10 09:40:48 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/41/view - 0
+07-10 09:40:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/41/view - 0 - 404 0 - 0.5026ms
+07-10 09:40:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/40/view - -
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/40/view - - - 204 - - 0.2862ms
+07-10 09:40:48 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/40/view - 0
+07-10 09:40:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/40/view - 0 - 404 0 - 0.2614ms
+07-10 09:40:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38/view - -
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38/view - - - 204 - - 0.2123ms
+07-10 09:40:48 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/38/view - 0
+07-10 09:40:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/38/view - 0 - 404 0 - 0.2713ms
+07-10 09:40:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/37/view - -
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/37/view - - - 204 - - 0.1996ms
+07-10 09:40:48 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/37/view - 0
+07-10 09:40:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/37/view - 0 - 404 0 - 0.2478ms
+07-10 09:40:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/36/view - -
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/36/view - - - 204 - - 0.2573ms
+07-10 09:40:48 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/36/view - 0
+07-10 09:40:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/36/view - 0 - 404 0 - 0.2555ms
+07-10 09:40:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/35/view - -
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/35/view - - - 204 - - 0.2158ms
+07-10 09:40:48 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/35/view - 0
+07-10 09:40:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/35/view - 0 - 404 0 - 0.3309ms
+07-10 09:40:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/34/view - -
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/34/view - - - 204 - - 0.2248ms
+07-10 09:40:48 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/34/view - 0
+07-10 09:40:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/34/view - 0 - 404 0 - 0.3279ms
+07-10 09:40:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/33/view - -
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/33/view - - - 204 - - 0.3086ms
+07-10 09:40:48 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/33/view - 0
+07-10 09:40:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:48 INF CORS policy execution successful.
+07-10 09:40:48 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/33/view - 0 - 404 0 - 0.3117ms
+07-10 09:40:54 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=a - -
+07-10 09:40:54 INF CORS policy execution successful.
+07-10 09:40:54 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=a - - - 204 - - 0.2883ms
+07-10 09:40:54 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=a - -
+07-10 09:40:54 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:40:54 INF CORS policy execution successful.
+07-10 09:40:54 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:40:54 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:40:54 INF fetching all users
+07-10 09:40:54 INF Executed DbCommand (9ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:40:54 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:40:54 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 74.4624ms
+07-10 09:40:54 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:40:54 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=a - - - 200 - application/json;+charset=utf-8 75.0023ms
+07-10 09:42:08 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:42:08 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - -
+07-10 09:42:08 INF CORS policy execution successful.
+07-10 09:42:08 INF CORS policy execution successful.
+07-10 09:42:08 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - - - 204 - - 5.7611ms
+07-10 09:42:08 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 204 - - 5.7563ms
+07-10 09:42:08 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:42:08 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/tags - -
+07-10 09:42:08 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:08 INF CORS policy execution successful.
+07-10 09:42:08 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:08 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:08 INF CORS policy execution successful.
+07-10 09:42:08 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:08 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/tags - - - 404 0 - 0.3005ms
+07-10 09:42:08 INF fetching all stories
+07-10 09:42:09 INF Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Story] AS [s]
+07-10 09:42:09 INF Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Body], [t].[PublishedDate], [t].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM (
+    SELECT [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+    FROM [Story] AS [s]
+    ORDER BY [s].[PublishedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [User] AS [u] ON [t].[AuthorId] = [u].[Id]
+ORDER BY [t].[PublishedDate] DESC
+07-10 09:42:09 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto'.
+07-10 09:42:09 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 905.643ms
+07-10 09:42:09 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:09 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 906.7845ms
+07-10 09:42:13 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:42:13 INF CORS policy execution successful.
+07-10 09:42:13 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 204 - - 0.4056ms
+07-10 09:42:13 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - -
+07-10 09:42:13 INF CORS policy execution successful.
+07-10 09:42:13 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/tags - - - 204 - - 0.4011ms
+07-10 09:42:13 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-10 09:42:13 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:13 INF CORS policy execution successful.
+07-10 09:42:13 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:13 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:13 INF fetching all stories
+07-10 09:42:13 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/tags - -
+07-10 09:42:13 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:13 INF CORS policy execution successful.
+07-10 09:42:13 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/tags - - - 404 0 - 0.4324ms
+07-10 09:42:13 INF Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Story] AS [s]
+07-10 09:42:13 INF Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Body], [t].[PublishedDate], [t].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM (
+    SELECT [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+    FROM [Story] AS [s]
+    ORDER BY [s].[PublishedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [User] AS [u] ON [t].[AuthorId] = [u].[Id]
+ORDER BY [t].[PublishedDate] DESC
+07-10 09:42:13 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto'.
+07-10 09:42:13 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 145.6345ms
+07-10 09:42:13 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:13 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 146.6139ms
+07-10 09:42:14 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/43/view - -
+07-10 09:42:14 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/42/view - -
+07-10 09:42:14 INF CORS policy execution successful.
+07-10 09:42:14 INF CORS policy execution successful.
+07-10 09:42:14 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/42/view - - - 204 - - 0.3213ms
+07-10 09:42:14 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/43/view - - - 204 - - 0.3815ms
+07-10 09:42:14 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/42/view - 0
+07-10 09:42:14 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/43/view - 0
+07-10 09:42:14 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:14 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:14 INF CORS policy execution successful.
+07-10 09:42:14 INF CORS policy execution successful.
+07-10 09:42:14 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/42/view - 0 - 404 0 - 0.6003ms
+07-10 09:42:14 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/43/view - 0 - 404 0 - 0.6682ms
+07-10 09:42:15 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/41/view - -
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/41/view - - - 204 - - 0.2450ms
+07-10 09:42:15 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/41/view - 0
+07-10 09:42:15 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/41/view - 0 - 404 0 - 0.6786ms
+07-10 09:42:15 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/40/view - -
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/40/view - - - 204 - - 0.2801ms
+07-10 09:42:15 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/40/view - 0
+07-10 09:42:15 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/40/view - 0 - 404 0 - 0.5920ms
+07-10 09:42:15 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38/view - -
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38/view - - - 204 - - 0.3259ms
+07-10 09:42:15 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/37/view - -
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/37/view - - - 204 - - 0.3849ms
+07-10 09:42:15 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/36/view - -
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/36/view - - - 204 - - 0.3737ms
+07-10 09:42:15 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/38/view - 0
+07-10 09:42:15 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/38/view - 0 - 404 0 - 0.3934ms
+07-10 09:42:15 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/37/view - 0
+07-10 09:42:15 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/37/view - 0 - 404 0 - 0.2622ms
+07-10 09:42:15 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/36/view - 0
+07-10 09:42:15 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/36/view - 0 - 404 0 - 0.3291ms
+07-10 09:42:15 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/35/view - -
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/35/view - - - 204 - - 0.2814ms
+07-10 09:42:15 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/35/view - 0
+07-10 09:42:15 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/35/view - 0 - 404 0 - 0.2825ms
+07-10 09:42:15 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/34/view - -
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/34/view - - - 204 - - 0.4103ms
+07-10 09:42:15 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/34/view - 0
+07-10 09:42:15 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:15 INF CORS policy execution successful.
+07-10 09:42:15 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/34/view - 0 - 404 0 - 0.3545ms
+07-10 09:42:16 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/33/view - -
+07-10 09:42:16 INF CORS policy execution successful.
+07-10 09:42:16 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/33/view - - - 204 - - 0.2822ms
+07-10 09:42:16 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/33/view - 0
+07-10 09:42:16 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:16 INF CORS policy execution successful.
+07-10 09:42:16 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/33/view - 0 - 404 0 - 0.2479ms
+07-10 09:42:17 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=a - -
+07-10 09:42:17 INF CORS policy execution successful.
+07-10 09:42:17 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=a - - - 204 - - 0.3544ms
+07-10 09:42:17 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=a - -
+07-10 09:42:17 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:17 INF CORS policy execution successful.
+07-10 09:42:17 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:17 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:17 INF fetching all users
+07-10 09:42:17 INF Executed DbCommand (9ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:17 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:17 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 62.0195ms
+07-10 09:42:17 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:17 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=a - - - 200 - application/json;+charset=utf-8 62.6029ms
+07-10 09:42:18 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=al - -
+07-10 09:42:18 INF CORS policy execution successful.
+07-10 09:42:18 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=al - - - 204 - - 0.4155ms
+07-10 09:42:18 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=al - -
+07-10 09:42:18 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:18 INF CORS policy execution successful.
+07-10 09:42:18 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:18 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:18 INF fetching all users
+07-10 09:42:18 INF Executed DbCommand (13ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:18 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:18 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 87.0324ms
+07-10 09:42:18 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:18 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=al - - - 200 - application/json;+charset=utf-8 87.6098ms
+07-10 09:42:20 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=a - -
+07-10 09:42:20 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:20 INF CORS policy execution successful.
+07-10 09:42:20 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:20 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:20 INF fetching all users
+07-10 09:42:20 INF Executed DbCommand (12ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:20 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:20 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 192.2358ms
+07-10 09:42:20 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:20 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=a - - - 200 - application/json;+charset=utf-8 192.8580ms
+07-10 09:42:20 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ah - -
+07-10 09:42:20 INF CORS policy execution successful.
+07-10 09:42:20 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ah - - - 204 - - 0.3145ms
+07-10 09:42:20 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=ah - -
+07-10 09:42:20 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:20 INF CORS policy execution successful.
+07-10 09:42:20 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:20 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:20 INF fetching all users
+07-10 09:42:20 INF Executed DbCommand (4ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:20 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:20 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 17.395ms
+07-10 09:42:20 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:20 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=ah - - - 200 - application/json;+charset=utf-8 18.0095ms
+07-10 09:42:22 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ahn - -
+07-10 09:42:22 INF CORS policy execution successful.
+07-10 09:42:22 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ahn - - - 204 - - 0.3359ms
+07-10 09:42:22 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=ahn - -
+07-10 09:42:22 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:22 INF CORS policy execution successful.
+07-10 09:42:22 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:22 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:22 INF fetching all users
+07-10 09:42:22 INF Executed DbCommand (14ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:22 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:22 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 176.3461ms
+07-10 09:42:22 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:22 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=ahn - - - 200 - application/json;+charset=utf-8 176.8891ms
+07-10 09:42:24 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ahna - -
+07-10 09:42:24 INF CORS policy execution successful.
+07-10 09:42:24 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ahna - - - 204 - - 0.3514ms
+07-10 09:42:24 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=ahna - -
+07-10 09:42:24 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:24 INF CORS policy execution successful.
+07-10 09:42:24 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:24 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:24 INF fetching all users
+07-10 09:42:25 INF Executed DbCommand (11ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:25 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:25 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 140.9141ms
+07-10 09:42:25 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:25 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=ahna - - - 200 - application/json;+charset=utf-8 141.5217ms
+07-10 09:42:26 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ahnaf - -
+07-10 09:42:26 INF CORS policy execution successful.
+07-10 09:42:26 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ahnaf - - - 204 - - 0.2550ms
+07-10 09:42:26 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=ahnaf - -
+07-10 09:42:26 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:26 INF CORS policy execution successful.
+07-10 09:42:26 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:26 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:26 INF fetching all users
+07-10 09:42:26 INF Executed DbCommand (10ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:26 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:26 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 102.7794ms
+07-10 09:42:26 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:26 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=ahnaf - - - 200 - application/json;+charset=utf-8 103.4191ms
+07-10 09:42:33 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users?username=ahnaf - -
+07-10 09:42:33 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:33 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:33 INF fetching all users
+07-10 09:42:33 INF Executed DbCommand (17ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:33 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:33 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 170.355ms
+07-10 09:42:33 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:33 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users?username=ahnaf - - - 200 - application/json;+charset=utf-8 171.2558ms
+07-10 09:42:37 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ahnaf - -
+07-10 09:42:37 INF CORS policy execution successful.
+07-10 09:42:37 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ahnaf - - - 204 - - 0.2464ms
+07-10 09:42:37 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=ahnaf - -
+07-10 09:42:37 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:37 INF CORS policy execution successful.
+07-10 09:42:37 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:37 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:37 INF fetching all users
+07-10 09:42:37 INF Executed DbCommand (11ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:37 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:37 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 325.4791ms
+07-10 09:42:37 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:37 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=ahnaf - - - 200 - application/json;+charset=utf-8 326.1257ms
+07-10 09:42:38 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username= - -
+07-10 09:42:38 INF CORS policy execution successful.
+07-10 09:42:38 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username= - - - 204 - - 0.3051ms
+07-10 09:42:38 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username= - -
+07-10 09:42:38 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:38 INF CORS policy execution successful.
+07-10 09:42:38 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:38 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:38 INF fetching all users
+07-10 09:42:39 INF Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+07-10 09:42:39 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:39 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 513.7098ms
+07-10 09:42:39 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:39 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username= - - - 200 - application/json;+charset=utf-8 514.2577ms
+07-10 09:42:39 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=al - -
+07-10 09:42:39 INF CORS policy execution successful.
+07-10 09:42:39 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=al - - - 204 - - 0.2426ms
+07-10 09:42:39 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=al - -
+07-10 09:42:39 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:39 INF CORS policy execution successful.
+07-10 09:42:39 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:39 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:39 INF fetching all users
+07-10 09:42:39 INF Executed DbCommand (6ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:39 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:39 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 19.7547ms
+07-10 09:42:39 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:39 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=al - - - 200 - application/json;+charset=utf-8 20.3212ms
+07-10 09:42:39 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ali - -
+07-10 09:42:39 INF CORS policy execution successful.
+07-10 09:42:39 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/?username=ali - - - 204 - - 0.3056ms
+07-10 09:42:39 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/?username=ali - -
+07-10 09:42:39 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:39 INF CORS policy execution successful.
+07-10 09:42:39 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:39 INF Route matched with {action = "GetAll", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Collections.Generic.IEnumerable`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto]] GetAllAsync(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:39 INF fetching all users
+07-10 09:42:39 INF Executed DbCommand (11ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE (@__username_0 LIKE N'') OR CHARINDEX(@__username_0, [u].[UserName]) > 0
+07-10 09:42:39 INF Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto, Cefalo.EchoOfThoughts.AppCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+07-10 09:42:39 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 67.5074ms
+07-10 09:42:39 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:39 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/?username=ali - - - 200 - application/json;+charset=utf-8 68.3337ms
+07-10 09:42:41 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/users/ali - -
+07-10 09:42:41 INF CORS policy execution successful.
+07-10 09:42:41 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/users/ali - - - 204 - - 0.2959ms
+07-10 09:42:41 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/ali - -
+07-10 09:42:41 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:41 INF CORS policy execution successful.
+07-10 09:42:41 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:41 INF Route matched with {action = "GetByUsername", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto] GetByUsername(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:41 INF fetching user by username: ali
+07-10 09:42:41 INF Executed DbCommand (15ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedAt], [t].[Email], [t].[FullName], [t].[IsDisabled], [t].[PasswordHash], [t].[PasswordUpdatedAt], [t].[ProfilePicture], [t].[Role], [t].[UserName], [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Story] AS [s] ON [t].[Id] = [s].[AuthorId]
+ORDER BY [t].[Id]
+07-10 09:42:41 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto'.
+07-10 09:42:41 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi) in 107.7014ms
+07-10 09:42:41 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:41 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/ali - - - 200 - application/json;+charset=utf-8 108.4906ms
+07-10 09:42:41 INF Request starting HTTP/1.1 GET http://localhost:7002/api/users/ali - -
+07-10 09:42:41 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:41 INF CORS policy execution successful.
+07-10 09:42:41 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:41 INF Route matched with {action = "GetByUsername", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto] GetByUsername(System.String) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:41 INF fetching user by username: ali
+07-10 09:42:41 INF Executed DbCommand (3ms) [Parameters=[@__username_0='?' (Size = 10)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedAt], [t].[Email], [t].[FullName], [t].[IsDisabled], [t].[PasswordHash], [t].[PasswordUpdatedAt], [t].[ProfilePicture], [t].[Role], [t].[UserName], [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[UserName] = @__username_0
+) AS [t]
+LEFT JOIN [Story] AS [s] ON [t].[Id] = [s].[AuthorId]
+ORDER BY [t].[Id]
+07-10 09:42:41 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserDto'.
+07-10 09:42:41 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi) in 19.2908ms
+07-10 09:42:41 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.UsersController.GetByUsername (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:41 INF Request finished HTTP/1.1 GET http://localhost:7002/api/users/ali - - - 200 - application/json;+charset=utf-8 20.2389ms
+07-10 09:42:48 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38 - -
+07-10 09:42:48 INF CORS policy execution successful.
+07-10 09:42:48 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38 - - - 204 - - 0.3454ms
+07-10 09:42:48 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/38 - -
+07-10 09:42:48 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:42:48 INF CORS policy execution successful.
+07-10 09:42:48 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:48 INF Route matched with {action = "Get", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] Get(Int32) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:42:48 INF fetching a single story with 38
+07-10 09:42:48 INF Executed DbCommand (11ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [Story] AS [s]
+INNER JOIN [User] AS [u] ON [s].[AuthorId] = [u].[Id]
+WHERE [s].[Id] = @__id_0
+07-10 09:42:48 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto'.
+07-10 09:42:48 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi) in 209.4733ms
+07-10 09:42:48 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:42:48 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/38 - - - 200 410 application/xml;+charset=utf-8 212.1437ms
+07-10 09:45:40 INF Request starting HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38 - -
+07-10 09:45:40 INF CORS policy execution successful.
+07-10 09:45:40 INF Request finished HTTP/1.1 OPTIONS http://localhost:7002/api/stories/38 - - - 204 - - 0.8290ms
+07-10 09:45:40 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/38 - -
+07-10 09:45:40 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+07-10 09:45:40 INF CORS policy execution successful.
+07-10 09:45:40 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:45:40 INF Route matched with {action = "Get", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] Get(Int32) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-10 09:45:40 INF fetching a single story with 38
+07-10 09:45:41 INF Executed DbCommand (15ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [Story] AS [s]
+INNER JOIN [User] AS [u] ON [s].[AuthorId] = [u].[Id]
+WHERE [s].[Id] = @__id_0
+07-10 09:45:41 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto'.
+07-10 09:45:41 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi) in 84ms
+07-10 09:45:41 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.Get (Cefalo.EchoOfThoughts.WebApi)'
+07-10 09:45:41 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/38 - - - 200 410 application/xml;+charset=utf-8 84.5129ms

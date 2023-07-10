@@ -16,11 +16,11 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
             _logger = logger;
         }
 
-        // GET api/users
+        // GET api/users?username=ali
         [HttpGet]
-        public async Task<IEnumerable<UserDto>> GetAllAsync() {
+        public async Task<IEnumerable<UserDto>> GetAllAsync([FromQuery] string? username) {
             _logger.LogInformation("fetching all users");
-            return await _userService.GetAll();
+            return await _userService.GetAll(username);
         }
 
         // GET api/users/{id}

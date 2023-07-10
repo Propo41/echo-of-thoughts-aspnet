@@ -26,8 +26,8 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             return _mapper.Map<UserDto>(res);
         }
 
-        public async Task<IEnumerable<UserDto>> GetAll() {
-            var users = await _userRepository.FindAllAsync();
+        public async Task<IEnumerable<UserDto>> GetAll(string username) {
+            var users = await _userRepository.FindAllAsync(username);
             return _mapper.Map<IEnumerable<UserDto>>(users);
         }
 

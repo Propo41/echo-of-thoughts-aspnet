@@ -3,7 +3,7 @@
 namespace Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces {
     public interface IUserRepository {
         Task<User> CreateAsync(User user);
-        Task<IEnumerable<User>> FindAllAsync();
+        Task<IEnumerable<User>> FindAllAsync(string username);
         Task<User> Find(int id);
         Task<User> Find(string username);
         Task<User> FindByEmail(string email);

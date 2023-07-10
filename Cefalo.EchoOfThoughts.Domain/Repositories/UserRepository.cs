@@ -1,6 +1,7 @@
 ﻿using Cefalo.EchoOfThoughts.Domain.Entities;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Cefalo.EchoOfThoughts.Domain.Repositories {
     public class UserRepository : IUserRepository {
@@ -15,9 +16,13 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
             return newUser.Entity;
         }
 
-        public async Task<IEnumerable<User>> FindAllAsync() {
-            return await _context.Users
-                .ToListAsync();
+        public async Task<IEnumerable<User>> FindAllAsync(string username) {
+            var userQuery = _context.Users.AsQueryable();
+            if (!username.IsNullOrEmpty()) {
+                userQuery = userQuery.Where(u => u.UserName.Contains(username));
+            }
+
+            return await userQuery.ToListAsync();
         }
 
         public async Task<User> Find(int id) {
