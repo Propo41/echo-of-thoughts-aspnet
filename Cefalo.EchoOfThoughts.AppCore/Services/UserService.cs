@@ -1,22 +1,18 @@
 ﻿using AutoMapper;
-using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Cefalo.EchoOfThoughts.AppCore.Dtos.User;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
 using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
-using Cefalo.EchoOfThoughts.Domain.Entities;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Services {
     public class UserService : IUserService {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
-        private readonly IDateTimeProvider _dateTimeProvider;
 
-        public UserService(IUserRepository userRepository, IMapper mapper, IDateTimeProvider dateTimeProvider) {
+        public UserService(IUserRepository userRepository, IMapper mapper) {
             _userRepository = userRepository;
             _mapper = mapper;
-            _dateTimeProvider = dateTimeProvider;
         }
 
         public async Task<IEnumerable<UserDto>> GetAllAsync(string username) {
