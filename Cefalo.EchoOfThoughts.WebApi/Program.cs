@@ -9,10 +9,21 @@ using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// The wrapped sink (File in this case) will be invoked on a worker thread
+// while your application's thread gets on with more important stuff.
+// Because the memory buffer may contain events that have not yet been written
+// to the target sink, it is important to call Log.CloseAndFlush() or
+// Logger.Dispose() when the application exits.
 var logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.FromLogContext()
+    .MinimumLevel.Information()
+    .WriteTo.Async(config =>
+        config.File(
+            "../logs/log-.txt",
+            restrictedToMinimumLevel: LogEventLevel.Information,
+            outputTemplate: "{Timestamp:MM-dd HH:mm:ss} {Level:u3} {Message:lj}{NewLine}",
+            rollingInterval: RollingInterval.Day))
     .CreateLogger();
+
 builder.Logging.ClearProviders();
 builder.Logging.AddSerilog(logger);
 
@@ -60,6 +71,12 @@ if (app.Environment.IsDevelopment()) {
 } else {
     // todo for production
 }
+
+IHostApplicationLifetime lifetime = app.Lifetime;
+lifetime.ApplicationStopping.Register(() => {
+    Console.WriteLine("app stopping.. flushing logs");
+    logger.Dispose();
+});
 
 //app.UseHttpsRedirection();
 app.UseAuthentication();
