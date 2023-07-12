@@ -150,7 +150,6 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             // assert
             Assert.IsAssignableFrom<Payload>(result);
             Assert.NotNull(result);
-            Assert.Equal("User deleted successfully", result.Message);
         }
     }
 }

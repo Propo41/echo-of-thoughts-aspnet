@@ -36,6 +36,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
             buffer.AppendLine($"Title: {story.Title}");
             buffer.AppendLine($"Body:  {story.Body}");
             buffer.AppendLine($"Date: {story.PublishedDate}");
+            buffer.AppendLine($"Date: {story.UpdatedAt}");
             if (story.Author != null) {
                 buffer.AppendLine($"Author:  {story.Author.Username}");
                 buffer.AppendLine($"Author Image:  {story.Author.ProfilePicture}");

@@ -1,7 +1,10 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=41c3c94f_002Dffa9_002D41c8_002D919b_002D102fa421e90a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="DeleteById_InvalidId_ThrowsNotFoundException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1b993bde_002D493e_002D4a0d_002Db584_002De544a17db94a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateAsync_InvalidAuthorId_ThrowsUnauthorizedException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.DeleteById_InvalidId_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.DeleteById_HasProperId_ReturnsPayload&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.UpdateAsync_InvalidAuthorId_ThrowsUnauthorizedException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.UpdateAsync_InvalidId_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.UpdateAsync_ValidParameters_ReturnsUpdatedStory&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.DeleteAsync_InvalidStoryId_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.DeleteAsync_CorrectStoryId_ReturnsPayload&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
