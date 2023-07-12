@@ -1,0 +1,133 @@
+07-12 13:47:15 INF Executed DbCommand (128ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 13:47:15 INF Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 13:47:16 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 13:47:16 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 13:47:16 INF Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-12 13:47:16 INF No migrations were applied. The database is already up to date.
+07-12 13:47:16 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-12 13:47:17 INF Now listening on: http://localhost:7002
+07-12 13:47:17 INF Now listening on: http://localhost:5299
+07-12 13:47:17 INF Application started. Press Ctrl+C to shut down.
+07-12 13:47:17 INF Hosting environment: Development
+07-12 13:47:17 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\
+07-12 13:47:26 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-12 13:47:27 INF Failed to validate the token.
+07-12 13:47:27 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/11/2023 9:20:57 AM', Current time: '7/12/2023 7:47:27 AM'.
+07-12 13:47:27 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:47:27 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 13:47:27 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 280.8381ms
+07-12 13:47:27 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:47:27 ERR An unhandled exception has occurred while executing the request.
+07-12 13:47:27 ERR An unhandled exception occurred.
+07-12 13:47:27 INF Sending error response: Cefalo.EchoOfThoughts.AppCore.Helpers.ErrorResponse
+07-12 13:47:27 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 500 - application/json 897.8840ms
+07-12 13:47:30 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-12 13:47:30 INF Failed to validate the token.
+07-12 13:47:30 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/11/2023 9:20:57 AM', Current time: '7/12/2023 7:47:30 AM'.
+07-12 13:47:30 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:47:30 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 13:47:30 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 27.7546ms
+07-12 13:47:30 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:47:30 ERR An unhandled exception has occurred while executing the request.
+07-12 13:47:30 ERR An unhandled exception occurred.
+07-12 13:47:30 INF Sending error response: Cefalo.EchoOfThoughts.AppCore.Helpers.ErrorResponse
+07-12 13:47:30 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 500 - application/json 32.1960ms
+07-12 13:47:42 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories/12 - -
+07-12 13:47:42 INF Failed to validate the token.
+07-12 13:47:42 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/11/2023 9:20:57 AM', Current time: '7/12/2023 7:47:42 AM'.
+07-12 13:47:42 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:47:42 INF Route matched with {action = "Get", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] GetAsync(Int32) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 13:47:42 INF fetching a single story with 12
+07-12 13:47:43 INF Executed DbCommand (80ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title], [s].[UpdatedAt], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [Story] AS [s]
+INNER JOIN [User] AS [u] ON [s].[AuthorId] = [u].[Id]
+WHERE [s].[Id] = @__id_0
+07-12 13:47:43 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAsync (Cefalo.EchoOfThoughts.WebApi) in 1028.6838ms
+07-12 13:47:43 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:47:43 ERR An unhandled exception has occurred while executing the request.
+07-12 13:47:43 ERR An unhandled exception occurred.
+07-12 13:47:43 INF Sending error response: Cefalo.EchoOfThoughts.AppCore.Helpers.ErrorResponse
+07-12 13:47:43 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories/12 - - - 404 - application/json 1055.2175ms
+07-12 13:47:47 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-12 13:47:47 INF Failed to validate the token.
+07-12 13:47:47 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/11/2023 9:20:57 AM', Current time: '7/12/2023 7:47:47 AM'.
+07-12 13:47:47 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:47:47 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 13:47:47 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 25.9854ms
+07-12 13:47:47 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:47:47 ERR An unhandled exception has occurred while executing the request.
+07-12 13:47:47 ERR An unhandled exception occurred.
+07-12 13:47:47 INF Sending error response: Cefalo.EchoOfThoughts.AppCore.Helpers.ErrorResponse
+07-12 13:47:47 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 500 - application/json 28.1800ms
+07-12 13:48:16 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-12 13:48:16 INF Failed to validate the token.
+07-12 13:48:16 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/11/2023 9:20:57 AM', Current time: '7/12/2023 7:48:16 AM'.
+07-12 13:48:16 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:48:16 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 13:48:16 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 32.6229ms
+07-12 13:48:16 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:48:16 ERR An unhandled exception has occurred while executing the request.
+07-12 13:48:16 ERR An unhandled exception occurred.
+07-12 13:48:16 INF Sending error response: Cefalo.EchoOfThoughts.AppCore.Helpers.ErrorResponse
+07-12 13:48:16 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 500 - application/json 42.3602ms
+07-12 13:48:17 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-12 13:48:17 INF Failed to validate the token.
+07-12 13:48:17 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/11/2023 9:20:57 AM', Current time: '7/12/2023 7:48:17 AM'.
+07-12 13:48:17 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:48:17 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 13:48:17 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 21.9258ms
+07-12 13:48:17 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:48:17 ERR An unhandled exception has occurred while executing the request.
+07-12 13:48:17 ERR An unhandled exception occurred.
+07-12 13:48:17 INF Sending error response: Cefalo.EchoOfThoughts.AppCore.Helpers.ErrorResponse
+07-12 13:48:17 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 500 - application/json 23.3050ms
+07-12 13:48:28 INF Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 13:48:28 INF Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 13:48:28 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 13:48:28 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 13:48:28 INF Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-12 13:48:28 INF No migrations were applied. The database is already up to date.
+07-12 13:48:28 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-12 13:48:28 INF Now listening on: http://localhost:7002
+07-12 13:48:28 INF Now listening on: http://localhost:5299
+07-12 13:48:28 INF Application started. Press Ctrl+C to shut down.
+07-12 13:48:28 INF Hosting environment: Development
+07-12 13:48:28 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\
+07-12 13:48:29 INF Request starting HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - -
+07-12 13:48:29 INF Failed to validate the token.
+07-12 13:48:29 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/11/2023 9:20:57 AM', Current time: '7/12/2023 7:48:29 AM'.
+07-12 13:48:29 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:48:29 INF Route matched with {action = "GetAll", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto] GetAllAsync(Cefalo.EchoOfThoughts.AppCore.Helpers.PaginationFilter) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 13:48:29 INF fetching all stories
+07-12 13:48:30 INF Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Story] AS [s]
+07-12 13:48:30 INF Executed DbCommand (58ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Body], [t].[PublishedDate], [t].[Title], [t].[UpdatedAt], [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM (
+    SELECT [s].[Id], [s].[AuthorId], [s].[Body], [s].[PublishedDate], [s].[Title], [s].[UpdatedAt]
+    FROM [Story] AS [s]
+    ORDER BY [s].[PublishedDate] DESC
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [User] AS [u] ON [t].[AuthorId] = [u].[Id]
+ORDER BY [t].[PublishedDate] DESC
+07-12 13:48:31 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoriesDto'.
+07-12 13:48:31 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 1565.9883ms
+07-12 13:48:31 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 13:48:31 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 2070.3587ms

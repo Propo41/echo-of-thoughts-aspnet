@@ -21,7 +21,6 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         // GET api/stories?pageNumber=1&pageSize=10
         [HttpGet]
         public async Task<StoriesDto> GetAllAsync([FromQuery] PaginationFilter filter) {
-            throw new NotImplementedException();
             _logger.LogInformation("fetching all stories");
             return await _storyService.GetAllAsync(filter.PageNumber, filter.PageSize);
         }
