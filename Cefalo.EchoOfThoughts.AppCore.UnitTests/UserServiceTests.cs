@@ -80,7 +80,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
 
 
         [Fact]
-        public async void UpdateAsync_NoBody_ThrowsBadException() {
+        public async void UpdateAsync_NoBody_ThrowsNotFoundException() {
             // arrange
             const int id = 1;
             User? existingUser = null;
@@ -121,13 +121,36 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
         }
 
         [Fact]
-        public async void DeleteById_HasBody_ReturnsUpdatedUser() {
+        public async void DeleteById_InvalidId_ThrowsNotFoundException() {
             // arrange
+            const int id = 1;
+            User? existingUser = null;
+            A.CallTo(() => _userRepository.FindAsync(id)).Returns(existingUser);
+
+            // act & assert
+            await Assert.ThrowsAsync<NotFoundException>(
+                async () => await _sut.DeleteByIdAsync(id));
+
+        }
+
+        [Fact]
+        public async void DeleteById_HasProperId_ReturnsPayload() {
+            // arrange
+            const int id = 1;
+            var existingUser = new User {
+                Id = 1,
+                Email = "aliahnaf@gmail.com"
+            };
+            A.CallTo(() => _userRepository.FindAsync(id)).Returns(existingUser);
+            A.CallTo(() => _userRepository.DeleteAsync(existingUser)).Returns(1);
 
             // act
+            var result = await _sut.DeleteByIdAsync(id);
 
             // assert
-
+            Assert.IsAssignableFrom<Payload>(result);
+            Assert.NotNull(result);
+            Assert.Equal("User deleted successfully", result.Message);
         }
     }
 }
