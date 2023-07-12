@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cefalo.EchoOfThoughts.Domain.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230622041257_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230710091841_ChangedUsernameLength")]
+    partial class ChangedUsernameLength
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -42,14 +42,15 @@ namespace Cefalo.EchoOfThoughts.Domain.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PublishedDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETUTCDATE()");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(400)
                         .HasColumnType("nvarchar(400)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -67,12 +68,10 @@ namespace Cefalo.EchoOfThoughts.Domain.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETUTCDATE()");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FullName")
                         .IsRequired()
@@ -89,9 +88,7 @@ namespace Cefalo.EchoOfThoughts.Domain.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("PasswordUpdatedAt")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValueSql("GETUTCDATE()");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("ProfilePicture")
                         .HasColumnType("nvarchar(max)");
@@ -103,10 +100,17 @@ namespace Cefalo.EchoOfThoughts.Domain.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
+                    b.HasIndex("UserName")
+                        .IsUnique();
 
                     b.ToTable("User", (string)null);
                 });

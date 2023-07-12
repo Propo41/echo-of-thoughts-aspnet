@@ -18,27 +18,22 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
 
         // POST api/auth/sign-up
         [HttpPost("sign-up")]
-        public async Task<UserDto> Register(UserSignUpDto signUpDto) {
-            var (userDto, jwtString) = await _authService.Create(signUpDto);
-
-            Response.Cookies.Append("session-token", jwtString, new CookieOptions {
-                Expires = DateTimeOffset.Now.AddDays(1),
-                HttpOnly = true
-            });
-
+        public async Task<UserDto> RegisterAsync(UserSignUpDto signUpDto) {
+            _logger.LogInformation("creating new user: {user}", signUpDto);
+            var userDto = await _authService.CreateAsync(signUpDto);
             return userDto;
         }
 
         // POST api/auth/sign-in
         [HttpPost("sign-in")]
-        public async Task<Payload> LogIn(UserSignInDto signInDto) {
-            var jwtString = await _authService.SignIn(signInDto);
-
+        public async Task<Payload> LogInAsync(UserSignInDto signInDto) {
+            var jwtString = await _authService.SignInAsync(signInDto);
+            _logger.LogInformation("signing in, user: {user}", signInDto);
             Response.Cookies.Append("session-token", jwtString, new CookieOptions {
                 Expires = DateTimeOffset.Now.AddDays(1),
-                HttpOnly = true
+                HttpOnly = false,
+                Secure = false
             });
-
             return new Payload("Sign in successful!");
         }
 
@@ -50,7 +45,6 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
                 Response.Cookies.Delete("session-token");
                 return new Payload("Signed out!");
             }
-
             return new Payload("Already signed out!");
         }
 
@@ -59,7 +53,8 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         [Authorize]
         public async Task<Payload> UpdatePasswordAsync([FromBody] UserPasswordDto passwordDto) {
             var id = HttpContext.User.FindFirst("Id")?.Value;
-            return await _authService.UpdatePassword(int.Parse(id!), passwordDto);
+            _logger.LogInformation("change password request from user id: {id}", id);
+            return await _authService.UpdatePasswordAsync(int.Parse(id!), passwordDto);
         }
 
     }

@@ -10,33 +10,43 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
     public class StoryService : IStoryService {
         private readonly IStoryRepository _storyRepository;
         private readonly IMapper _mapper;
-        public StoryService(IStoryRepository storyRepository, IMapper mapper) {
+        private readonly IDateTimeProvider _dateTimeProvider;
+
+        public StoryService(IStoryRepository storyRepository, IMapper mapper, IDateTimeProvider dateTimeProvider) {
             _mapper = mapper;
             _storyRepository = storyRepository;
+            _dateTimeProvider = dateTimeProvider;
         }
 
-        public async Task<StoryDto> Create(int authorId, StoryDto storyDto) {
+        public async Task<StoryDto> CreateAsync(int authorId, StoryDto storyDto) {
             var storyEntity = _mapper.Map<Story>(storyDto);
             storyEntity.AuthorId = authorId;
+            var currentTime = _dateTimeProvider.GetCurrentTime();
+            storyEntity.PublishedDate = currentTime;
+
             var createdStory = await _storyRepository.AddAsync(storyEntity);
             return _mapper.Map<StoryDto>(createdStory);
         }
 
-        public async Task<StoryDto> FindById(int id) {
-            var story = await _storyRepository.FindById(id, true);
+        public async Task<StoryDto> FindByIdAsync(int id) {
+            var story = await _storyRepository.FindByIdAsync(id, true);
             return story == null
                 ? throw new NotFoundException("No story is associated with the given id")
                 : _mapper.Map<StoryDto>(story);
         }
 
-        public async Task<IEnumerable<StoryDto>> GetAll(int pageNumber, int pageSize) {
+        public async Task<StoriesDto> GetAllAsync(int pageNumber, int pageSize) {
             var currentPosition = (pageNumber - 1) * pageSize;
-            var stories = await _storyRepository.FindAllAsync(currentPosition, pageSize, true);
-            return _mapper.Map<IEnumerable<StoryDto>>(stories);
+            var (totalCount, stories) = await _storyRepository.FindAllAsync(currentPosition, pageSize, true);
+            var storiesDto = _mapper.Map<IEnumerable<StoryDto>>(stories);
+            return new StoriesDto {
+                Stories = storiesDto,
+                TotalCount = totalCount
+            };
         }
 
-        public async Task<StoryDto> Update(int userId, int blogId, StoryUpdateDto storyDto) {
-            var existingStory = await _storyRepository.FindById(blogId);
+        public async Task<StoryDto> UpdateAsync(int userId, int blogId, StoryUpdateDto storyDto) {
+            var existingStory = await _storyRepository.FindByIdAsync(blogId);
             if (existingStory == null) {
                 throw new NotFoundException("No story is associated with the given id");
             }
@@ -45,16 +55,19 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
                 throw new UnauthorizedException("You do not have the privilege to update this story");
             }
 
+            var currentTime = _dateTimeProvider.GetCurrentTime();
+
             existingStory.Title = storyDto.Title;
             existingStory.Body = storyDto.Body;
+            existingStory.PublishedDate = currentTime;
+            existingStory.UpdatedAt = currentTime;
 
-            var story = await _storyRepository.Update(existingStory);
-
+            var story = await _storyRepository.UpdateAsync(existingStory);
             return _mapper.Map<StoryDto>(story);
         }
 
-        public async Task<Payload> DeleteById(int id, int userId) {
-            var existingStory = await _storyRepository.FindById(id);
+        public async Task<Payload> DeleteByIdAsync(int id, int userId) {
+            var existingStory = await _storyRepository.FindByIdAsync(id);
             if (existingStory == null) {
                 throw new NotFoundException("No story is associated with the given id");
             }

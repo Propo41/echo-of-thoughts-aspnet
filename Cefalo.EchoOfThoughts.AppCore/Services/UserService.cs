@@ -11,44 +11,42 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
     public class UserService : IUserService {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
+        private readonly IDateTimeProvider _dateTimeProvider;
 
-        public UserService(IUserRepository userRepository, IMapper mapper) {
+        public UserService(IUserRepository userRepository, IMapper mapper, IDateTimeProvider dateTimeProvider) {
             _userRepository = userRepository;
             _mapper = mapper;
+            _dateTimeProvider = dateTimeProvider;
         }
 
-        public async Task<UserDto> Create(UserSignUpDto signUpDto) {
-            var hashPassword = Auth.HashPassword(signUpDto.Password);
-            var user = _mapper.Map<User>(signUpDto);
-            user.PasswordHash = hashPassword;
-
-            var res = await _userRepository.CreateAsync(user);
-            return _mapper.Map<UserDto>(res);
-        }
-
-        public async Task<IEnumerable<UserDto>> GetAll() {
-            var users = await _userRepository.FindAllAsync();
+        public async Task<IEnumerable<UserDto>> GetAllAsync(string username) {
+            var users = await _userRepository.FindAllAsync(username);
             return _mapper.Map<IEnumerable<UserDto>>(users);
         }
 
-        public async Task<UserDto> FindById(int id) {
-            var existingUser = await _userRepository.FindById(id);
+        public async Task<UserDto> FindAsync(int id) {
+            var existingUser = await _userRepository.FindAsync(id);
             return _mapper.Map<UserDto>(existingUser);
         }
 
-        public async Task<UserUpdateDto> Update(int id, UserUpdateDto updateDto) {
-            var existingUser = await _userRepository.FindById(id);
+        public async Task<UserDto> FindAsync(string username) {
+            var existingUser = await _userRepository.FindAsync(username);
+            return _mapper.Map<UserDto>(existingUser);
+        }
+
+        public async Task<UserUpdateDto> UpdateAsync(int id, UserUpdateDto updateDto) {
+            var existingUser = await _userRepository.FindAsync(id);
             if (existingUser == null) {
                 throw new NotFoundException("User not found. Try logging in again");
             }
 
             updateDto.MapToModel(existingUser);
-            var res = await _userRepository.Update(existingUser);
+            var res = await _userRepository.UpdateAsync(existingUser);
             return _mapper.Map<UserUpdateDto>(res);
         }
 
-        public async Task<Payload> DeleteById(int id) {
-            var existingUser = await _userRepository.FindById(id);
+        public async Task<Payload> DeleteByIdAsync(int id) {
+            var existingUser = await _userRepository.FindAsync(id);
             if (existingUser == null) {
                 throw new NotFoundException("User not found");
             }

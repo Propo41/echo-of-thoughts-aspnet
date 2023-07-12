@@ -15,8 +15,6 @@ namespace Cefalo.EchoOfThoughts.WebApi.Extensions {
                     var error = context.Features.Get<IExceptionHandlerFeature>();
                     var exception = error?.Error;
 
-                    // Log the exception
-                    logger.LogError(exception, "An unhandled exception occurred.");
                     ErrorResponse? errorResponse = null;
 
                     switch (exception) {
@@ -55,6 +53,9 @@ namespace Cefalo.EchoOfThoughts.WebApi.Extensions {
                             break;
                     }
                     context.Response.StatusCode = errorResponse.StatusCode;
+
+                    logger.LogError(exception, "An unhandled exception occurred.");
+                    logger.LogInformation("Sending error response: {response}", errorResponse);
 
                     var jsonResponse = JsonSerializer.Serialize(errorResponse);
                     await context.Response.WriteAsync(jsonResponse);
