@@ -12,6 +12,8 @@ namespace Cefalo.EchoOfThoughts.AppCore.MappingProfiles {
             CreateMap<User, AuthorDto>();
             CreateMap<Story, StoryDto>()
                 .ReverseMap();
+
+            CreateMap<Story, AuthoredStoryDto>();
         }
     }
 }

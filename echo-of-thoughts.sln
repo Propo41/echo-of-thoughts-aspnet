@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cefalo.EchoOfThoughts.AppCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cefalo.EchoOfThoughts.Domain", "Cefalo.EchoOfThoughts.Domain\Cefalo.EchoOfThoughts.Domain.csproj", "{2F87A07A-F16E-4D7C-A82A-ADA9B95D6774}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{181DAD7F-A306-454F-968D-0510EB7B3D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cefalo.EchoOfThoughts.AppCore.UnitTests", "Cefalo.EchoOfThoughts.AppCore.UnitTests\Cefalo.EchoOfThoughts.AppCore.UnitTests.csproj", "{532D8CBD-D556-4149-A040-AC5BEB0F016A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{2F87A07A-F16E-4D7C-A82A-ADA9B95D6774}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F87A07A-F16E-4D7C-A82A-ADA9B95D6774}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F87A07A-F16E-4D7C-A82A-ADA9B95D6774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{532D8CBD-D556-4149-A040-AC5BEB0F016A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532D8CBD-D556-4149-A040-AC5BEB0F016A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532D8CBD-D556-4149-A040-AC5BEB0F016A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532D8CBD-D556-4149-A040-AC5BEB0F016A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{532D8CBD-D556-4149-A040-AC5BEB0F016A} = {181DAD7F-A306-454F-968D-0510EB7B3D83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1289D863-51EA-4484-9520-129DB8ADA4F7}

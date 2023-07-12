@@ -15,8 +15,11 @@ namespace Cefalo.EchoOfThoughts.Domain.Configuration {
                 .IsRequired()
                 .HasMaxLength(5000);
             builder.Property(e => e.PublishedDate)
-                .HasColumnType("datetime2")
-                .HasDefaultValueSql("GETUTCDATE()");
+                .IsRequired()
+                .HasColumnType("datetime2");
+            builder.Property(e => e.UpdatedAt)
+                .IsRequired()
+                .HasColumnType("datetime2");
 
             // relationships
             builder.HasOne(u => u.Author)

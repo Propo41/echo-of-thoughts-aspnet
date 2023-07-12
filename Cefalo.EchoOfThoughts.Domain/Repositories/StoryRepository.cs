@@ -17,10 +17,10 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
             return res.Entity;
         }
 
-        public async Task<IEnumerable<Story>> FindAllAsync(int position, int pageSize, bool includeAuthor) {
+        public async Task<(int, IEnumerable<Story>)> FindAllAsync(int position, int pageSize, bool includeAuthor) {
             var storyQuery = _context.Stories.AsQueryable();
             storyQuery = storyQuery
-                .OrderBy(d => d.PublishedDate)
+                .OrderByDescending(d => d.PublishedDate)
                 .Skip(position)
                 .Take(pageSize);
 
@@ -28,10 +28,13 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
                 storyQuery = storyQuery.Include(s => s.Author);
             }
 
-            return await storyQuery.ToListAsync();
+            var totalCount = await _context.Stories.CountAsync();
+            var stories = await storyQuery.ToListAsync();
+
+            return (totalCount, stories);
         }
 
-        public async Task<Story> FindById(int id, bool includeAuthor = false) {
+        public async Task<Story> FindByIdAsync(int id, bool includeAuthor = false) {
             var storyQuery = _context.Stories.AsQueryable();
             if (includeAuthor) {
                 storyQuery = storyQuery.Include(s => s.Author);
@@ -40,7 +43,7 @@ namespace Cefalo.EchoOfThoughts.Domain.Repositories {
             return await storyQuery.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<Story> Update(Story story) {
+        public async Task<Story> UpdateAsync(Story story) {
             var updatedStory = _context.Stories.Update(story);
             await _context.SaveChangesAsync();
             return updatedStory.Entity;

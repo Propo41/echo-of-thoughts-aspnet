@@ -1,14 +1,11 @@
 ﻿namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
     public class PaginationFilter {
-        public int PageNumber { get; set; }
+        private int _pageNumber;
+        public int PageNumber {
+            get => _pageNumber;
+            set => _pageNumber = value <= 0 ? 1 : value;
+        }
+
         public int PageSize { get; set; }
-        public PaginationFilter() {
-            this.PageNumber = 1;
-            this.PageSize = 10;
-        }
-        public PaginationFilter(int pageNumber, int pageSize) {
-            this.PageNumber = pageNumber < 1 ? 1 : pageNumber;
-            this.PageSize = pageSize > 10 ? 10 : pageSize;
-        }
     }
 }

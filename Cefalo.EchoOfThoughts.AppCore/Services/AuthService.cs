@@ -13,38 +13,42 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
-        public AuthService(IUserRepository userRepository, IMapper mapper, IConfiguration configuration) {
+        private readonly IDateTimeProvider _dateTimeProvider;
+        public AuthService(IUserRepository userRepository, IMapper mapper, IConfiguration configuration, IDateTimeProvider dateTimeProvider) {
             _mapper = mapper;
             _userRepository = userRepository;
             _configuration = configuration;
+            _dateTimeProvider = dateTimeProvider;
         }
-        public async Task<Tuple<UserDto, string>> Create(UserSignUpDto userDto) {
+        public async Task<UserDto> CreateAsync(UserSignUpDto userDto) {
             // check if user with the email already exists
-            var userByEmail = await _userRepository.FindByEmail(userDto.Email);
+            var userByEmail = await _userRepository.FindByEmailAsync(userDto.Email);
             if (userByEmail != null) {
                 throw new BadRequestException("An account with the email already exists!");
             }
 
-            var userByUsername = await _userRepository.FindByUsername(userDto.UserName);
+            var userByUsername = await _userRepository.FindAsync(userDto.UserName);
             if (userByUsername != null) {
                 throw new BadRequestException("An account with the username already exists!");
             }
             // hash password and save in db
             var hashPassword = Auth.HashPassword(userDto.Password);
+
             var userEntity = _mapper.Map<User>(userDto);
             userEntity.PasswordHash = hashPassword;
-            var newUser = await _userRepository.CreateAsync(userEntity);
+            var currentTime = _dateTimeProvider.GetCurrentTime();
+            userEntity.CreatedAt = currentTime;
+            userEntity.PasswordUpdatedAt = currentTime;
 
-            // create a jwt string
-            var jwtString = Auth.CreateJwt(newUser, _configuration);
+            var newUser = await _userRepository.CreateAsync(userEntity);
             var newUserDto = _mapper.Map<UserDto>(newUser);
 
-            return new Tuple<UserDto, string>(newUserDto, jwtString);
+            return newUserDto;
         }
 
-        public async Task<string> SignIn(UserSignInDto userSignDto) {
+        public async Task<string> SignInAsync(UserSignInDto userSignDto) {
             // check if email exists
-            var user = await _userRepository.FindByEmail(userSignDto.Email);
+            var user = await _userRepository.FindByEmailAsync(userSignDto.Email);
             if (user == null) {
                 throw new NotFoundException("An account with the email does not exist!");
             }
@@ -56,16 +60,8 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             return Auth.CreateJwt(user, _configuration);
         }
 
-        public Task<UserDto> FindByEmail(string email) {
-            throw new NotImplementedException();
-        }
-
-        public Task<Payload> Delete(int id) {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Payload> UpdatePassword(int userId, UserPasswordDto passwordDto) {
-            var existingUser = await _userRepository.FindById(userId);
+        public async Task<Payload> UpdatePasswordAsync(int userId, UserPasswordDto passwordDto) {
+            var existingUser = await _userRepository.FindAsync(userId);
             if (existingUser == null) {
                 throw new NotFoundException("User not found");
             }
@@ -78,13 +74,13 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             }
 
             var hashPassword = Auth.HashPassword(passwordDto.NewPassword);
+            var currentTime = _dateTimeProvider.GetCurrentTime();
             existingUser.PasswordHash = hashPassword;
-            await _userRepository.Update(existingUser);
+            existingUser.PasswordUpdatedAt = currentTime;
+
+            await _userRepository.UpdateAsync(existingUser);
             return new Payload("Password updated successfully");
         }
 
-        public Task<Payload> SignOut() {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -3,6 +3,7 @@ using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
 using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
+using Cefalo.EchoOfThoughts.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,14 +20,17 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
 
         // GET api/stories?pageNumber=1&pageSize=10
         [HttpGet]
-        public async Task<IEnumerable<StoryDto>> GetAllAsync([FromQuery] PaginationFilter filter) {
-            return await _storyService.GetAll(filter.PageNumber, filter.PageSize);
+        public async Task<StoriesDto> GetAllAsync([FromQuery] PaginationFilter filter) {
+            throw new NotImplementedException();
+            _logger.LogInformation("fetching all stories");
+            return await _storyService.GetAllAsync(filter.PageNumber, filter.PageSize);
         }
 
         // GET api/stories/{id}
         [HttpGet("{id:int}")]
-        public async Task<StoryDto> Get(int id) {
-            var story = await _storyService.FindById(id);
+        public async Task<StoryDto> GetAsync(int id) {
+            _logger.LogInformation("fetching a single story with {id}", id);
+            var story = await _storyService.FindByIdAsync(id);
             return story;
         }
 
@@ -34,26 +38,29 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         [HttpPost]
         [Authorize]
         public async Task<StoryDto> PostAsync([FromBody] StoryDto story) {
+            _logger.LogInformation("creating a new story: {story}", story);
             var authorId = HttpContext.User.FindFirst("Id")?.Value;
-            return await _storyService.Create(int.Parse(authorId!), story);
+            return await _storyService.CreateAsync(int.Parse(authorId!), story);
         }
 
         // PUT api/stories/{id}
         [HttpPut("{id:int}")]
         [Authorize]
         public async Task<StoryDto> UpdateAsync(int id, [FromBody] StoryUpdateDto updateDto) {
+            _logger.LogInformation("updating story with {id} and contents: {story}", id, updateDto);
             if (updateDto == null) {
                 throw new BadRequestException("No body provided for update");
             }
             var userId = HttpContext.User.FindFirst("Id")?.Value;
-            return await _storyService.Update(int.Parse(userId!), id, updateDto);
+            return await _storyService.UpdateAsync(int.Parse(userId!), id, updateDto);
         }
 
         [HttpDelete("{id:int}")]
         [Authorize]
         public async Task<Payload> DeleteAsync(int id) {
+            _logger.LogInformation("deleting story with {id}", id);
             var userId = HttpContext.User.FindFirst("Id")?.Value;
-            return await _storyService.DeleteById(id, int.Parse(userId!));
+            return await _storyService.DeleteByIdAsync(id, int.Parse(userId!));
         }
 
     }
