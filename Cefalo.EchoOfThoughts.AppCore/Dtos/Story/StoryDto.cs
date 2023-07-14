@@ -1,6 +1,4 @@
-﻿using Cefalo.EchoOfThoughts.AppCore.Dtos.User;
-
-namespace Cefalo.EchoOfThoughts.AppCore.Dtos.Story {
+﻿namespace Cefalo.EchoOfThoughts.AppCore.Dtos.Story {
     public class StoryDto {
         public int Id { get; set; }
         public string Title { get; set; }

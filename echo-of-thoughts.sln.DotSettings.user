@@ -1,10 +1,22 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=1b993bde_002D493e_002D4a0d_002Db584_002De544a17db94a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateAsync_InvalidAuthorId_ThrowsUnauthorizedException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=919e3462_002D2a75_002D4deb_002D879c_002D10d8d13a58fb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateAsync_WithCorrectFields_ReturnsCreatedStory" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.UpdateAsync_InvalidAuthorId_ThrowsUnauthorizedException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.UpdateAsync_InvalidId_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.UpdateAsync_ValidParameters_ReturnsUpdatedStory&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.DeleteAsync_InvalidStoryId_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.DeleteAsync_CorrectStoryId_ReturnsPayload&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.CreateAsync_WithCorrectFields_ReturnsCreatedStory&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.CreateAsync_WithCorrectFields_ReturnsNewUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.CreateAsync_WithEmailAlreadyExisting_ThrowsBadRequestException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.CreateAsync_WithUsernameAlreadyExisting_ThrowsBadRequestException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.SignInAsync_WithCorrectFields_ReturnsJwt&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.SignInAsync_WithNonExistentEmail_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.SignInAsync_WithIncorrectPassword_BadRequestException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.UpdatePasswordAsync_WithCorrectFields_ReturnsPayload&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.UpdatePasswordAsync_WithNoExistingUser_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.UpdatePasswordAsync_PasswordsMismatch_ThrowsBadRequestException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.UpdatePasswordAsync_PasswordIncorrect_ThrowsBadRequestException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.GetAllAsync_HaveNoUsers_ReturnsEmptyList&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.GetAllAsync_HasUsers_ReturnsUserList&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.FindAsync_HasUser_ReturnsUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.UpdateAsync_WithNoBody_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.UpdateAsync_HasBody_ReturnsUpdatedUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.DeleteById_WithExistingStoryIdAndCorrectAuthorId_ReturnsPayload&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

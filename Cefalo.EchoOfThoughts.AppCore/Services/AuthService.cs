@@ -50,14 +50,14 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             return newUserDto;
         }
 
-        public async Task<string> SignInAsync(UserSignInDto userSignDto) {
+        public async Task<string> SignInAsync(UserSignInDto userSignInDto) {
             // check if email exists
-            var user = await _userRepository.FindByEmailAsync(userSignDto.Email);
+            var user = await _userRepository.FindByEmailAsync(userSignInDto.Email);
             if (user == null) {
                 throw new NotFoundException("An account with the email does not exist!");
             }
             // check if password valid
-            var isValid = _authHelper.IsPasswordValid(userSignDto.Password, user.PasswordHash);
+            var isValid = _authHelper.IsPasswordValid(userSignInDto.Password, user.PasswordHash);
             if (!isValid) {
                 throw new BadRequestException("Incorrect password entered!");
             }

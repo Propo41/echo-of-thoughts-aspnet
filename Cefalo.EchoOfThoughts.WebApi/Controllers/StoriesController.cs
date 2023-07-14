@@ -36,7 +36,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         // POST api/stories
         [HttpPost]
         [Authorize]
-        public async Task<StoryDto> PostAsync([FromBody] StoryDto story) {
+        public async Task<StoryDto> PostAsync([FromBody] StoryCreateDto story) {
             _logger.LogInformation("creating a new story: {story}", story);
             var authorId = HttpContext.User.FindFirst("Id")?.Value;
             return await _storyService.CreateAsync(int.Parse(authorId!), story);

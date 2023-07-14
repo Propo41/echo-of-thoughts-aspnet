@@ -54,10 +54,10 @@ builder.Services.AddCors(o => {
 // DI
 builder.Services.RegisterRepositories();
 builder.Services.RegisterServices();
-builder.Services.RegisterAuthServices(builder.Configuration, new AuthHelper());
+builder.Services.RegisterAuthServices(builder.Configuration);
 builder.Services.AddAuthorization();
-builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
-builder.Services.AddSingleton<IAuthHelper, AuthHelper>();
+builder.Services.AddScoped<IDateTimeProvider, DateTimeProvider>();
+builder.Services.AddScoped<IAuthHelper, AuthHelper>();
 
 var app = builder.Build();
 

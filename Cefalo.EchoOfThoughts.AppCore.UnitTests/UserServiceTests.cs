@@ -2,115 +2,103 @@ using AutoMapper;
 using Cefalo.EchoOfThoughts.AppCore.Dtos.User;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
+using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
 using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
 using Cefalo.EchoOfThoughts.AppCore.Services;
+using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
 using Cefalo.EchoOfThoughts.Domain.Entities;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
 using FakeItEasy;
 
 namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
-    public class UserServiceTests {
+    public class UserServiceTests : TestConfig {
         private readonly IUserRepository _userRepository;
-        private readonly UserService _sut;
+        private readonly IUserService _sut;
 
         public UserServiceTests() {
             _userRepository = A.Fake<IUserRepository>();
-            // mapper config
-            var mapperConfiguration = new MapperConfiguration(cfg => {
-                cfg.AddProfile<StoryMappingProfile>();
-                cfg.AddProfile<UserMappingProfile>();
-            });
-            var mapper = mapperConfiguration.CreateMapper();
-            _sut = new UserService(_userRepository, mapper);
-
+            _sut = new UserService(_userRepository, Mapper);
         }
 
         [Fact]
-        public async void GetAllAsync_NoUsers_ReturnsEmptyList() {
+        public async void GetAllAsync_HaveNoUsers_ReturnsEmptyList() {
             // arrange
-            var expectedUsers = new List<User>();
             const string username = "dummy";
-            A.CallTo(() => _userRepository.FindAllAsync(username)).Returns(expectedUsers);
+            A.CallTo(() => _userRepository.FindAllAsync(A<string>._)).Returns(new List<User>());
 
             // act
             var result = await _sut.GetAllAsync(username);
 
             // assert
             Assert.Empty(result);
+            A.CallTo(() => _userRepository.FindAllAsync(username)).MustHaveHappenedOnceExactly();
         }
 
         [Fact]
         public async void GetAllAsync_HasUsers_ReturnsUserList() {
             // arrange
-            var expectedUsers = new List<User> {
-                new() { UserName = "ali" },
-                new() { UserName = "ahnaf" }
-            };
-
             const string username = "";
-            A.CallTo(() => _userRepository.FindAllAsync(username)).Returns(expectedUsers);
+            A.CallTo(() => _userRepository.FindAllAsync(A<string>._)).Returns(Users);
 
             // act
             var result = await _sut.GetAllAsync(username);
 
             // assert
             Assert.IsAssignableFrom<IEnumerable<UserDto>>(result);
-            Assert.Equal(result.Count(), expectedUsers.Count);
+            Assert.Equal(result.Count(), Users.Count());
+            A.CallTo(() => _userRepository.FindAllAsync(username)).MustHaveHappenedOnceExactly();
         }
 
         [Fact]
-        public async void FindAsync_HasUser_ReturnsUser() {
+        public async void FindAsync_WithExistingId_ReturnsUser() {
             // arrange
-            var expectedUser = new User {
-                UserName = "ali",
-                Id = 1
-            };
-
             const int id = 1;
-            A.CallTo(() => _userRepository.FindAsync(id)).Returns(expectedUser);
+            var expectedUser = Users.FirstOrDefault(x => x.Id == id);
+            A.CallTo(() => _userRepository.FindAsync(A<int>._)).Returns(expectedUser);
 
             // act
             var result = await _sut.FindAsync(id);
 
             // assert
             Assert.IsAssignableFrom<UserDto>(result);
-            Assert.Equal(result.UserName, expectedUser.UserName);
+            Assert.Equal(result.UserName, expectedUser!.UserName);
             Assert.Equal(result.Id, expectedUser.Id);
+            A.CallTo(() => _userRepository.FindAsync(id)).MustHaveHappenedOnceExactly();
         }
 
 
         [Fact]
-        public async void UpdateAsync_NoBody_ThrowsNotFoundException() {
+        public async void UpdateAsync_WithNoBody_ThrowsNotFoundException() {
             // arrange
             const int id = 1;
             User? existingUser = null;
             UserUpdateDto? updateDto = null;
-            A.CallTo(() => _userRepository.FindAsync(id)).Returns(existingUser);
+            A.CallTo(() => _userRepository.FindAsync(A<int>._)).Returns(existingUser);
 
-            // act & assert
-            await Assert.ThrowsAsync<NotFoundException>(
-                async () => await _sut.UpdateAsync(id, updateDto));
+            // act
+            var exception = await Record.ExceptionAsync(() => _sut.UpdateAsync(id, updateDto));
+
+            // assert
+            Assert.IsType<NotFoundException>(exception);
+            A.CallTo(() => _userRepository.FindAsync(id)).MustHaveHappenedOnceExactly();
         }
 
         [Fact]
         public async void UpdateAsync_HasBody_ReturnsUpdatedUser() {
             // arrange
             const int id = 1;
-            var existingUser = new User {
-                Id = 1,
-                Email = "aliahnaf@gmail.com"
-            };
+            var existingUser = Users.FirstOrDefault();
             var updateDto = new UserUpdateDto {
                 Email = "ali@gmail.com"
             };
 
             var updatedUser = new User {
-                Id = existingUser.Id,
+                Id = existingUser!.Id,
                 Email = updateDto.Email
             };
 
-            A.CallTo(() => _userRepository.FindAsync(id)).Returns(existingUser);
-            A.CallTo(() => _userRepository.UpdateAsync(existingUser)).Returns(updatedUser);
+            A.CallTo(() => _userRepository.FindAsync(A<int>._)).Returns(existingUser);
+            A.CallTo(() => _userRepository.UpdateAsync(A<User>._)).Returns(updatedUser);
 
             // act
             var result = await _sut.UpdateAsync(id, updateDto);
@@ -118,38 +106,40 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             // assert
             Assert.IsAssignableFrom<UserUpdateDto>(result);
             Assert.Equal(existingUser.Id, updatedUser.Id);
+            A.CallTo(() => _userRepository.FindAsync(id)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => _userRepository.UpdateAsync(existingUser)).MustHaveHappenedOnceExactly();
         }
 
         [Fact]
-        public async void DeleteById_InvalidId_ThrowsNotFoundException() {
+        public async void DeleteById_NonExistentStoryId_ThrowsNotFoundException() {
             // arrange
             const int id = 1;
             User? existingUser = null;
-            A.CallTo(() => _userRepository.FindAsync(id)).Returns(existingUser);
+            A.CallTo(() => _userRepository.FindAsync(A<int>._)).Returns(existingUser);
 
-            // act & assert
-            await Assert.ThrowsAsync<NotFoundException>(
-                async () => await _sut.DeleteByIdAsync(id));
+            // act
+            var exception = await Record.ExceptionAsync(() => _sut.DeleteByIdAsync(id));
 
+            // assert
+            Assert.IsType<NotFoundException>(exception);
+            A.CallTo(() => _userRepository.FindAsync(id)).MustHaveHappenedOnceExactly();
         }
 
         [Fact]
-        public async void DeleteById_HasProperId_ReturnsPayload() {
+        public async void DeleteById_WithExistingStoryIdAndCorrectAuthorId_ReturnsPayload() {
             // arrange
             const int id = 1;
-            var existingUser = new User {
-                Id = 1,
-                Email = "aliahnaf@gmail.com"
-            };
-            A.CallTo(() => _userRepository.FindAsync(id)).Returns(existingUser);
-            A.CallTo(() => _userRepository.DeleteAsync(existingUser)).Returns(1);
+            var existingUser = Users.FirstOrDefault(x => x.Id == id);
+            A.CallTo(() => _userRepository.FindAsync(A<int>._)).Returns(existingUser);
+            A.CallTo(() => _userRepository.DeleteAsync(A<User>._)).Returns(1);
 
             // act
             var result = await _sut.DeleteByIdAsync(id);
 
             // assert
-            Assert.IsAssignableFrom<Payload>(result);
-            Assert.NotNull(result);
+            Assert.IsType<Payload>(result);
+            A.CallTo(() => _userRepository.FindAsync(id)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => _userRepository.DeleteAsync(existingUser)).MustHaveHappenedOnceExactly();
         }
     }
 }

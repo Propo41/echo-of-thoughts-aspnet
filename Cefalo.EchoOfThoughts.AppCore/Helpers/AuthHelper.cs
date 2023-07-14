@@ -32,19 +32,6 @@ namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
             return tokenHandler.WriteToken(token);
         }
 
-        public TokenValidationParameters GeTokenValidationParameters(IConfiguration configuration) {
-            return new TokenValidationParameters {
-                ValidIssuer = configuration["Jwt:Issuer"],
-                ValidAudience = configuration["Jwt:Audience"],
-                IssuerSigningKey = new SymmetricSecurityKey
-                    (Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!)),
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true
-            };
-        }
-
         public string HashPassword(string password) {
             return BCrypt.Net.BCrypt.HashPassword(password);
         }

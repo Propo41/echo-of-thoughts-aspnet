@@ -131,3 +131,289 @@ ORDER BY [t].[PublishedDate] DESC
 07-12 13:48:31 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi) in 1565.9883ms
 07-12 13:48:31 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.GetAllAsync (Cefalo.EchoOfThoughts.WebApi)'
 07-12 13:48:31 INF Request finished HTTP/1.1 GET http://localhost:7002/api/stories?pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 2070.3587ms
+07-12 15:19:27 INF Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 15:19:27 INF Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 15:19:27 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 15:19:28 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 15:19:28 INF Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-12 15:19:28 INF No migrations were applied. The database is already up to date.
+07-12 15:19:28 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-12 15:19:28 INF Now listening on: http://localhost:7002
+07-12 15:19:28 INF Now listening on: http://localhost:5299
+07-12 15:19:28 INF Application started. Press Ctrl+C to shut down.
+07-12 15:19:28 INF Hosting environment: Development
+07-12 15:19:28 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\
+07-12 15:19:53 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:19:53 INF Failed to validate the token.
+07-12 15:19:53 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/11/2023 9:20:57 AM', Current time: '7/12/2023 9:19:53 AM'.
+07-12 15:19:53 INF Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+07-12 15:19:53 INF AuthenticationScheme: Bearer was challenged.
+07-12 15:19:53 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 401 0 - 455.8115ms
+07-12 15:20:01 INF Request starting HTTP/1.1 POST http://localhost:7002/api/auth/sign-in application/json 72
+07-12 15:20:01 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.AuthController.LogInAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:20:01 INF Route matched with {action = "LogIn", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Helpers.Payload] LogInAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserSignInDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.AuthController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:20:02 INF Executed DbCommand (89ms) [Parameters=[@__email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Email] = @__email_0
+07-12 15:20:02 INF signing in, user: Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserSignInDto
+07-12 15:20:02 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Helpers.Payload'.
+07-12 15:20:02 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.AuthController.LogInAsync (Cefalo.EchoOfThoughts.WebApi) in 1416.9218ms
+07-12 15:20:02 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.AuthController.LogInAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:20:02 INF Request finished HTTP/1.1 POST http://localhost:7002/api/auth/sign-in application/json 72 - 200 - application/json;+charset=utf-8 1494.6398ms
+07-12 15:20:15 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:20:15 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:20:15 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:20:15 INF creating a new story: Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto
+07-12 15:20:16 INF Executed DbCommand (18ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 400), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Story] ([AuthorId], [Body], [PublishedDate], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+07-12 15:20:16 ERR An exception occurred in the database while saving changes for context type 'Cefalo.EchoOfThoughts.Domain.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Title', table 'echo-of-thoughts.dbo.Story'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:f536680a-cbff-4163-b474-494459c0c3c2
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+07-12 15:20:16 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 631.9333ms
+07-12 15:20:16 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:20:16 ERR An unhandled exception has occurred while executing the request.
+07-12 15:20:16 ERR An unhandled exception occurred.
+07-12 15:20:16 INF Sending error response: Cefalo.EchoOfThoughts.AppCore.Helpers.ErrorResponse
+07-12 15:20:16 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 500 - application/json 683.2382ms
+07-12 15:20:23 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 692
+07-12 15:20:23 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:20:23 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:20:23 INF creating a new story: Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto
+07-12 15:20:23 INF Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 400), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Story] ([AuthorId], [Body], [PublishedDate], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+07-12 15:20:23 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto'.
+07-12 15:20:23 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 116.3052ms
+07-12 15:20:23 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:20:23 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 692 - 200 - application/json;+charset=utf-8 118.6490ms
+07-12 15:36:52 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:36:52 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:36:52 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:36:52 INF creating a new story: Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto
+07-12 15:36:53 INF Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 400), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Story] ([AuthorId], [Body], [PublishedDate], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+07-12 15:36:53 ERR An exception occurred in the database while saving changes for context type 'Cefalo.EchoOfThoughts.Domain.ApplicationDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Title', table 'echo-of-thoughts.dbo.Story'; column does not allow nulls. INSERT fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:2ac6b610-f4bc-4422-b76f-5ff3cd92ccb6
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+07-12 15:36:53 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 233.128ms
+07-12 15:36:53 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:36:53 ERR An unhandled exception has occurred while executing the request.
+07-12 15:40:48 INF Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 15:40:48 INF Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 15:40:48 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 15:40:48 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 15:40:48 INF Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-12 15:40:48 INF No migrations were applied. The database is already up to date.
+07-12 15:40:48 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-12 15:40:48 INF Now listening on: http://localhost:7002
+07-12 15:40:48 INF Now listening on: http://localhost:5299
+07-12 15:40:48 INF Application started. Press Ctrl+C to shut down.
+07-12 15:40:48 INF Hosting environment: Development
+07-12 15:40:48 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\
+07-12 15:40:49 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:40:49 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:40:49 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:40:50 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-12 15:40:50 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 355.7122ms
+07-12 15:40:50 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:40:50 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 400 - application/problem+json;+charset=utf-8 806.1932ms
+07-12 15:42:29 INF Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 15:42:29 INF Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 15:42:29 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 15:42:29 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 15:42:29 INF Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-12 15:42:29 INF No migrations were applied. The database is already up to date.
+07-12 15:42:30 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-12 15:42:30 INF Now listening on: http://localhost:7002
+07-12 15:42:30 INF Now listening on: http://localhost:5299
+07-12 15:42:30 INF Application started. Press Ctrl+C to shut down.
+07-12 15:42:30 INF Hosting environment: Development
+07-12 15:42:30 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\
+07-12 15:42:31 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:42:31 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:42:31 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:42:31 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-12 15:42:31 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 360.8312ms
+07-12 15:42:31 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:42:31 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 400 - application/problem+json;+charset=utf-8 806.0447ms
+07-12 15:42:33 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:42:33 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:42:33 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:42:33 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-12 15:42:33 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 1.3385ms
+07-12 15:42:33 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:42:33 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 400 - application/problem+json;+charset=utf-8 11.4839ms
+07-12 15:43:46 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:43:46 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:43:46 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:43:46 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-12 15:43:46 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 2.8605ms
+07-12 15:43:46 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:43:46 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 400 - application/problem+json;+charset=utf-8 14.8102ms
+07-12 15:43:47 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:43:47 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:43:47 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:43:47 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-12 15:43:47 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 0.4008ms
+07-12 15:43:47 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:43:47 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 400 - application/problem+json;+charset=utf-8 0.9736ms
+07-12 15:43:53 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:43:53 INF Failed to validate the token.
+07-12 15:43:53 INF Bearer was not authenticated. Failure message: IDX12729: Unable to decode the header '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+07-12 15:43:53 INF Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+07-12 15:43:53 INF AuthenticationScheme: Bearer was challenged.
+07-12 15:43:53 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 401 0 - 29.4853ms
+07-12 15:49:36 INF Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 15:49:36 INF Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 15:49:36 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 15:49:36 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 15:49:37 INF Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-12 15:49:37 INF No migrations were applied. The database is already up to date.
+07-12 15:49:37 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-12 15:49:37 INF Now listening on: http://localhost:7002
+07-12 15:49:37 INF Now listening on: http://localhost:5299
+07-12 15:49:37 INF Application started. Press Ctrl+C to shut down.
+07-12 15:49:37 INF Hosting environment: Development
+07-12 15:49:37 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\
+07-12 15:49:40 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:49:40 INF Failed to validate the token.
+07-12 15:49:40 INF Bearer was not authenticated. Failure message: IDX12729: Unable to decode the header '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string. jwtEncodedString: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+07-12 15:49:40 INF Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+07-12 15:49:40 INF AuthenticationScheme: Bearer was challenged.
+07-12 15:49:40 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 401 0 - 399.8611ms
+07-12 15:49:52 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 656
+07-12 15:49:52 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:49:52 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-12 15:49:53 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-12 15:49:53 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 305.9647ms
+07-12 15:49:53 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-12 15:49:53 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 656 - 400 - application/problem+json;+charset=utf-8 433.9602ms
+07-12 16:23:03 INF Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 16:23:03 INF Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 16:23:03 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 16:23:03 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 16:23:03 INF Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-12 16:23:03 INF No migrations were applied. The database is already up to date.
+07-12 16:23:03 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-12 16:23:03 INF Now listening on: http://localhost:7002
+07-12 16:23:03 INF Now listening on: http://localhost:5299
+07-12 16:23:03 INF Application started. Press Ctrl+C to shut down.
+07-12 16:23:03 INF Hosting environment: Development
+07-12 16:23:03 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\
+07-12 16:23:40 INF Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 16:23:40 INF Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 16:23:40 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-12 16:23:40 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-12 16:23:40 INF Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-12 16:23:40 INF No migrations were applied. The database is already up to date.
+07-12 16:23:40 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-12 16:23:40 INF Now listening on: http://localhost:7002
+07-12 16:23:40 INF Now listening on: http://localhost:5299
+07-12 16:23:40 INF Application started. Press Ctrl+C to shut down.
+07-12 16:23:40 INF Hosting environment: Development
+07-12 16:23:40 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\

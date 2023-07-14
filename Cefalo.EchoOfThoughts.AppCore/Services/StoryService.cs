@@ -19,15 +19,16 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             _dateTimeProvider = dateTimeProvider;
         }
 
-        public async Task<StoryDto> CreateAsync(int authorId, StoryDto storyDto) {
+        public async Task<StoryDto> CreateAsync(int authorId, StoryCreateDto storyDto) {
             var storyEntity = _mapper.Map<Story>(storyDto);
             storyEntity.AuthorId = authorId;
             var currentTime = _dateTimeProvider.GetCurrentTime();
             storyEntity.PublishedDate = currentTime;
+            storyEntity.UpdatedAt = currentTime;
 
             var createdStory = await _storyRepository.AddAsync(storyEntity);
             return _mapper.Map<StoryDto>(createdStory);
-        }
+         }
 
         public async Task<StoryDto> FindByIdAsync(int id) {
             var story = await _storyRepository.FindByIdAsync(id, true);
