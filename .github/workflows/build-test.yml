@@ -19,7 +19,7 @@ jobs:
       - name: Send greeting
         run: echo "Hello ${{ github.event.inputs.name }} 🐴!! Starting the build..."
   build:
-    runs-on: windows-latest
+      runs-on: windows-latest
       strategy:
         matrix:
           dotnet-version: ['6.0.x']
