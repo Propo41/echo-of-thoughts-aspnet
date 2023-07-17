@@ -28,7 +28,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
 
             var createdStory = await _storyRepository.AddAsync(storyEntity);
             return _mapper.Map<StoryDto>(createdStory);
-         }
+        }
 
         public async Task<StoryDto> FindByIdAsync(int id) {
             var story = await _storyRepository.FindByIdAsync(id, true);

@@ -4,7 +4,6 @@ using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
 using Cefalo.EchoOfThoughts.WebApi.Controllers;
 using FakeItEasy;
 using Microsoft.Extensions.Logging;
-using NuGet.ContentModel;
 
 namespace Cefalo.EchoOfThoughts.WebApi.UnitTests {
     public class UserControllerTests {

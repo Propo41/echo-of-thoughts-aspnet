@@ -1,10 +1,10 @@
-using Cefalo.EchoOfThoughts.WebApi.Extensions;
-using Microsoft.EntityFrameworkCore;
-using Cefalo.EchoOfThoughts.Domain;
-using Cefalo.EchoOfThoughts.WebApi;
-using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
+using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
+using Cefalo.EchoOfThoughts.Domain;
+using Cefalo.EchoOfThoughts.WebApi;
+using Cefalo.EchoOfThoughts.WebApi.Extensions;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
 

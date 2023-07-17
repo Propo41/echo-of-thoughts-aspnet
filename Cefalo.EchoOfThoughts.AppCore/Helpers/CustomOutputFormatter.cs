@@ -1,8 +1,8 @@
-﻿using System.Text;
-using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
+﻿using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
+using System.Text;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
     public class CustomOutputFormatter : TextOutputFormatter {

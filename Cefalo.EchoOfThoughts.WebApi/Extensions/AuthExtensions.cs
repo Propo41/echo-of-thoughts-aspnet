@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 

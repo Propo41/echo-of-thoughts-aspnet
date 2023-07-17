@@ -1,5 +1,4 @@
-﻿using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
-using Cefalo.EchoOfThoughts.AppCore.Dtos.User;
+﻿using Cefalo.EchoOfThoughts.AppCore.Dtos.User;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;

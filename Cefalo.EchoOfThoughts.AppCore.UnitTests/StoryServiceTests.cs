@@ -97,14 +97,15 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             const int pageNumber = 1;
             const int pageSize = 10;
             const int totalCount = 30;
-            const bool includeAuthor = false;
+            const bool includeAuthor = true;
+            var currentPosition = (pageNumber - 1) * pageSize;
 
             var stories = new List<Story> {
                 CreateFakeStory(1),
                 CreateFakeStory(2)
             };
 
-            A.CallTo(() => _storyRepository.FindAllAsync(A<int>.Ignored, pageSize, includeAuthor)).Returns((totalCount, stories));
+            A.CallTo(() => _storyRepository.FindAllAsync(A<int>._, A<int>._, A<bool>._)).Returns((totalCount, stories));
 
             // act
             var result = await _sut.GetAllAsync(pageNumber, pageSize);
@@ -114,7 +115,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             Assert.Equal(result.TotalCount, totalCount);
             Assert.Equal(result.Stories.Count(), stories.Count);
             A.CallTo(() => _storyRepository.FindAllAsync(
-                A<int>.That.Matches(x => true),
+                currentPosition,
                 pageSize,
                 includeAuthor)).MustHaveHappenedOnceExactly();
         }

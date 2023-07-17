@@ -1,22 +1,34 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=919e3462_002D2a75_002D4deb_002D879c_002D10d8d13a58fb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateAsync_WithCorrectFields_ReturnsCreatedStory" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=27a935cd_002Dcd3b_002D4a62_002Da084_002Db8168902e50d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateAsync_WithMissingFields_ThrowsDbUpdateException #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.CreateAsync_WithCorrectFields_ReturnsCreatedStory&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.CreateAsync_WithCorrectFields_ReturnsNewUser&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.CreateAsync_WithEmailAlreadyExisting_ThrowsBadRequestException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.CreateAsync_WithUsernameAlreadyExisting_ThrowsBadRequestException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.SignInAsync_WithCorrectFields_ReturnsJwt&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.SignInAsync_WithNonExistentEmail_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.SignInAsync_WithIncorrectPassword_BadRequestException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.UpdatePasswordAsync_WithCorrectFields_ReturnsPayload&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.UpdatePasswordAsync_WithNoExistingUser_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.UpdatePasswordAsync_PasswordsMismatch_ThrowsBadRequestException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.AuthServiceTests.UpdatePasswordAsync_PasswordIncorrect_ThrowsBadRequestException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.GetAllAsync_HaveNoUsers_ReturnsEmptyList&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.GetAllAsync_HasUsers_ReturnsUserList&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.FindAsync_HasUser_ReturnsUser&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.UpdateAsync_WithNoBody_ThrowsNotFoundException&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.UpdateAsync_HasBody_ReturnsUpdatedUser&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.UserServiceTests.DeleteById_WithExistingStoryIdAndCorrectAuthorId_ReturnsPayload&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.DeleteAsync_WithValidExistingStory_ReturnsDeletedRowsCount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.DeleteAsync_WithNonExistentStory_ThrowsDbUpdateException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.CreateAsync_WithRequiredFields_ReturnsNewUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.CreateAsync_WithMissingFields_ThrowsDbException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.FindAllAsync_HavingPreExistingUsersAndValidUsername_ReturnsUserWithGivenUsername&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.FindAsync_WithNonExistentId_ReturnsNull&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.FindAsync_WithExistingId_ReturnsUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.FindAsync_WithExistingUsername_ReturnsUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.FindAsync_WithNonExistentUsername_ReturnsNull&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.FindByEmailAsync_WithExistingEmail_ReturnsUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.FindByEmailAsync_WithNonExistentEmail_ReturnsNull&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.UpdateAsync_WithExistingUserAndNecessaryFields_ReturnsUpdatedUser&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.UpdateAsync_WithNonExistingUser_ThrowsDbException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.DeleteAsync_WithValidExistingUser_ReturnsDeletedRowsCount&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.UserRepositoryTests.DeleteAsync_WithNonExistentStory_ThrowsDbUpdateException&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.FindAllAsync_WhereNoStoriesExists_ReturnsEmptyList&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.FindAllAsync_WhereStoriesExists_ReturnsStoriesWithPagination&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.FindByIdAsync_WhereIdExists_ReturnsStory&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a2f356b_002D85e5_002D4be6_002Db7df_002Dbf70bfe5965e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateAsync_WithMissingFields_ThrowsDbUpdateException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.UpdateAsync_WithMissingFields_ThrowsDbUpdateException&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a0d5cb8f_002Dfc39_002D4586_002Db99b_002Db1b7092b988d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="FindByIdAsync_WhereIdExists_ReturnsStory" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.FindByIdAsync_WhereIdExists_ReturnsStory&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

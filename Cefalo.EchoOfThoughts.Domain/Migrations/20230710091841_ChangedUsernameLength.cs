@@ -2,14 +2,11 @@
 
 #nullable disable
 
-namespace Cefalo.EchoOfThoughts.Domain.Migrations
-{
+namespace Cefalo.EchoOfThoughts.Domain.Migrations {
     /// <inheritdoc />
-    public partial class ChangedUsernameLength : Migration
-    {
+    public partial class ChangedUsernameLength : Migration {
         /// <inheritdoc />
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
+        protected override void Up(MigrationBuilder migrationBuilder) {
             migrationBuilder.AlterColumn<string>(
                 name: "UserName",
                 table: "User",
@@ -22,8 +19,7 @@ namespace Cefalo.EchoOfThoughts.Domain.Migrations
         }
 
         /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
+        protected override void Down(MigrationBuilder migrationBuilder) {
             migrationBuilder.AlterColumn<string>(
                 name: "UserName",
                 table: "User",

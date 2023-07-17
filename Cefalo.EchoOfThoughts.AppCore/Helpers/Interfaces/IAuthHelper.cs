@@ -1,6 +1,5 @@
 ﻿using Cefalo.EchoOfThoughts.Domain.Entities;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces {
     public interface IAuthHelper {

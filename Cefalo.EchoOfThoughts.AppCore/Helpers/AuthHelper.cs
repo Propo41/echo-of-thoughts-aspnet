@@ -1,10 +1,10 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
+﻿using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
 using Cefalo.EchoOfThoughts.Domain.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
     public class AuthHelper : IAuthHelper {
