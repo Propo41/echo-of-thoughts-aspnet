@@ -11,7 +11,7 @@ using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
 using FakeItEasy;
 
 namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
-    public class StoryServiceTests {
+    public class StoryServiceTests : TestConfig {
         private readonly IStoryRepository _storyRepository;
         private readonly IDateTimeProvider _dateTimeProvider;
         private readonly IStoryService _sut;
@@ -27,21 +27,6 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             var mapper = mapperConfiguration.CreateMapper();
             _sut = new StoryService(_storyRepository, mapper, _dateTimeProvider);
 
-        }
-
-        private static Story CreateFakeStory(int id = 1, string body = "empty", string title = "empty", int authorId = 2) {
-            return new Story {
-                Id = id,
-                Body = body,
-                Title = title,
-                AuthorId = authorId
-            };
-        }
-        private static StoryDto CreateFakeStoryDto(string title = "empty", string body = "empty") {
-            return new StoryDto {
-                Title = title,
-                Body = body
-            };
         }
 
         [Fact]
@@ -79,8 +64,8 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
         public async void FindByIdAsync_WithStoryIdThatExists_ReturnsStory() {
             // arrange
             const int id = 1;
-            var story = CreateFakeStory(id);
-            A.CallTo(() => _storyRepository.FindByIdAsync(id, A<bool>._)).Returns(story);
+            var story = CreateFakeStory();
+            A.CallTo(() => _storyRepository.FindByIdAsync(A<int>._, A<bool>._)).Returns(story);
 
             // act
             var result = await _sut.FindByIdAsync(id);
@@ -98,7 +83,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             const int pageSize = 10;
             const int totalCount = 30;
             const bool includeAuthor = true;
-            var currentPosition = (pageNumber - 1) * pageSize;
+            const int currentPosition = (pageNumber - 1) * pageSize;
 
             var stories = new List<Story> {
                 CreateFakeStory(1),
@@ -130,7 +115,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
                 Body = "new body",
                 Title = "new title"
             };
-            A.CallTo(() => _storyRepository.FindByIdAsync(blogId, A<bool>._)).Returns(story);
+            A.CallTo(() => _storyRepository.FindByIdAsync(A<int>._, A<bool>._)).Returns(story);
 
             // act
             var exception = await Record.ExceptionAsync(() => _sut.UpdateAsync(userId, blogId, storyToUpdate));
@@ -150,7 +135,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
                 Body = "new body",
                 Title = "new title"
             };
-            A.CallTo(() => _storyRepository.FindByIdAsync(blogId, A<bool>._)).Returns(story);
+            A.CallTo(() => _storyRepository.FindByIdAsync(A<int>._, A<bool>._)).Returns(story);
 
             // act
             var exception = await Record.ExceptionAsync(() => _sut.UpdateAsync(userId, blogId, storyToUpdate));
@@ -179,8 +164,8 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
                 UpdatedAt = updatedTime
             };
 
-            A.CallTo(() => _storyRepository.FindByIdAsync(blogId, A<bool>._)).Returns(existingStory);
-            A.CallTo(() => _storyRepository.UpdateAsync(existingStory)).Returns(updatedStory);
+            A.CallTo(() => _storyRepository.FindByIdAsync(A<int>._, A<bool>._)).Returns(existingStory);
+            A.CallTo(() => _storyRepository.UpdateAsync(A<Story>._)).Returns(updatedStory);
             A.CallTo(() => _dateTimeProvider.GetCurrentTime()).Returns(updatedTime);
 
             // act
@@ -201,7 +186,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             const int blogId = 1;
             const int userId = 1;
             Story? story = null;
-            A.CallTo(() => _storyRepository.FindByIdAsync(blogId, A<bool>._)).Returns(story);
+            A.CallTo(() => _storyRepository.FindByIdAsync(A<int>._, A<bool>._)).Returns(story);
 
             // act
             var exception = await Record.ExceptionAsync(() => _sut.DeleteByIdAsync(blogId, userId));
@@ -218,7 +203,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             const int blogId = 1;
             const int userId = 1;
             var story = CreateFakeStory(1, authorId: userId);
-            A.CallTo(() => _storyRepository.FindByIdAsync(blogId, A<bool>._)).Returns(story);
+            A.CallTo(() => _storyRepository.FindByIdAsync(A<int>._, A<bool>._)).Returns(story);
 
             // act
             var result = await _sut.DeleteByIdAsync(blogId, userId);

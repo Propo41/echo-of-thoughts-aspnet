@@ -22,6 +22,16 @@ namespace Cefalo.EchoOfThoughts.AppCore.UnitTests {
             PopulateDummyData();
         }
 
+        public Story CreateFakeStory(int id = 1, string body = "empty", string title = "empty",
+            int authorId = 2) {
+            return new Story {
+                Id = id,
+                Body = body,
+                Title = title,
+                AuthorId = authorId
+            };
+        }
+
         private void PopulateDummyData() {
             Users = new List<User> {
                 new()

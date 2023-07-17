@@ -166,6 +166,7 @@ namespace Cefalo.EchoOfThoughts.Domain.UnitTests {
             var result = await sut.DeleteAsync(dummyStory);
             // Assert
             Assert.IsType<int>(result);
+            Assert.True(result > 0);
             Assert.Empty(context.Stories);
         }
 

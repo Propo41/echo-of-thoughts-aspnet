@@ -19,6 +19,8 @@
     &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.FindAllAsync_WhereNoStoriesExists_ReturnsEmptyList&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.FindAllAsync_WhereStoriesExists_ReturnsStoriesWithPagination&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::972D9B05-7404-48E1-AEFC-1595D2465C39::net6.0::Cefalo.EchoOfThoughts.Domain.UnitTests.StoryRepositoryTests.FindByIdAsync_WhereIdExists_ReturnsStory&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests.DeleteAsync_WithExistingStoryId_ReturnsPayload&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::532D8CBD-D556-4149-A040-AC5BEB0F016A::net6.0::Cefalo.EchoOfThoughts.AppCore.UnitTests.StoryServiceTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=7a2f356b_002D85e5_002D4be6_002Db7df_002Dbf70bfe5965e/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="UpdateAsync_WithMissingFields_ThrowsDbUpdateException" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
