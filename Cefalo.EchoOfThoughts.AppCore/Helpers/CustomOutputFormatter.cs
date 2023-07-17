@@ -1,8 +1,8 @@
-﻿using System.Text;
-using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
+﻿using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
+using System.Text;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
     public class CustomOutputFormatter : TextOutputFormatter {
@@ -36,6 +36,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
             buffer.AppendLine($"Title: {story.Title}");
             buffer.AppendLine($"Body:  {story.Body}");
             buffer.AppendLine($"Date: {story.PublishedDate}");
+            buffer.AppendLine($"Date: {story.UpdatedAt}");
             if (story.Author != null) {
                 buffer.AppendLine($"Author:  {story.Author.Username}");
                 buffer.AppendLine($"Author Image:  {story.Author.ProfilePicture}");

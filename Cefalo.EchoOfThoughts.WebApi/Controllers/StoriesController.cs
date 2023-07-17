@@ -1,9 +1,7 @@
-﻿using System.Runtime.InteropServices.ComTypes;
-using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
+﻿using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
 using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
-using Cefalo.EchoOfThoughts.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +19,6 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         // GET api/stories?pageNumber=1&pageSize=10
         [HttpGet]
         public async Task<StoriesDto> GetAllAsync([FromQuery] PaginationFilter filter) {
-            throw new NotImplementedException();
             _logger.LogInformation("fetching all stories");
             return await _storyService.GetAllAsync(filter.PageNumber, filter.PageSize);
         }
@@ -37,7 +34,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         // POST api/stories
         [HttpPost]
         [Authorize]
-        public async Task<StoryDto> PostAsync([FromBody] StoryDto story) {
+        public async Task<StoryDto> PostAsync([FromBody] StoryCreateDto story) {
             _logger.LogInformation("creating a new story: {story}", story);
             var authorId = HttpContext.User.FindFirst("Id")?.Value;
             return await _storyService.CreateAsync(int.Parse(authorId!), story);

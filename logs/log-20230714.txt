@@ -1,0 +1,66 @@
+07-14 16:25:44 INF Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-14 16:25:44 INF Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-14 16:25:44 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+07-14 16:25:44 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+07-14 16:25:44 INF Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+07-14 16:25:44 INF No migrations were applied. The database is already up to date.
+07-14 16:25:44 INF User profile is available. Using 'C:\Users\aliah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+07-14 16:25:45 INF Now listening on: http://localhost:7002
+07-14 16:25:45 INF Now listening on: http://localhost:5299
+07-14 16:25:45 INF Application started. Press Ctrl+C to shut down.
+07-14 16:25:45 INF Hosting environment: Development
+07-14 16:25:45 INF Content root path: C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\
+07-14 16:26:00 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 692
+07-14 16:26:00 INF Failed to validate the token.
+07-14 16:26:00 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/13/2023 9:20:02 AM', Current time: '7/14/2023 10:26:00 AM'.
+07-14 16:26:00 INF Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+07-14 16:26:00 INF AuthenticationScheme: Bearer was challenged.
+07-14 16:26:00 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 692 - 401 0 - 458.9275ms
+07-14 16:26:02 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 692
+07-14 16:26:02 INF Failed to validate the token.
+07-14 16:26:02 INF Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '7/13/2023 9:20:02 AM', Current time: '7/14/2023 10:26:02 AM'.
+07-14 16:26:02 INF Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+07-14 16:26:02 INF AuthenticationScheme: Bearer was challenged.
+07-14 16:26:02 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 692 - 401 0 - 4.1102ms
+07-14 16:26:07 INF Request starting HTTP/1.1 POST http://localhost:7002/api/auth/sign-in application/json 72
+07-14 16:26:07 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.AuthController.LogInAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-14 16:26:07 INF Route matched with {action = "LogIn", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Helpers.Payload] LogInAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserSignInDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.AuthController (Cefalo.EchoOfThoughts.WebApi).
+07-14 16:26:08 INF Executed DbCommand (81ms) [Parameters=[@__email_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[Email], [u].[FullName], [u].[IsDisabled], [u].[PasswordHash], [u].[PasswordUpdatedAt], [u].[ProfilePicture], [u].[Role], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Email] = @__email_0
+07-14 16:26:09 INF signing in, user: Cefalo.EchoOfThoughts.AppCore.Dtos.User.UserSignInDto
+07-14 16:26:09 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Helpers.Payload'.
+07-14 16:26:09 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.AuthController.LogInAsync (Cefalo.EchoOfThoughts.WebApi) in 1382.4553ms
+07-14 16:26:09 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.AuthController.LogInAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-14 16:26:09 INF Request finished HTTP/1.1 POST http://localhost:7002/api/auth/sign-in application/json 72 - 200 - application/json;+charset=utf-8 1459.1960ms
+07-14 16:26:22 INF Request starting HTTP/1.1 POST http://localhost:7002/api/stories application/json 692
+07-14 16:26:22 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-14 16:26:22 INF Route matched with {action = "Post", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] PostAsync(Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryCreateDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-14 16:26:22 INF creating a new story: Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryCreateDto
+07-14 16:26:22 INF Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (Size = 400), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Story] ([AuthorId], [Body], [PublishedDate], [Title], [UpdatedAt])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+07-14 16:26:22 INF Executing ObjectResult, writing value of type 'Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto'.
+07-14 16:26:22 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi) in 400.0442ms
+07-14 16:26:22 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.PostAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-14 16:26:22 INF Request finished HTTP/1.1 POST http://localhost:7002/api/stories application/json 692 - 200 - application/json;+charset=utf-8 429.7847ms
+07-14 16:26:34 INF Request starting HTTP/1.1 PUT http://localhost:7002/api/stories/2 application/json 42
+07-14 16:26:34 INF Executing endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.UpdateAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-14 16:26:34 INF Route matched with {action = "Update", controller = "Stories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryDto] UpdateAsync(Int32, Cefalo.EchoOfThoughts.AppCore.Dtos.Story.StoryUpdateDto) on controller Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController (Cefalo.EchoOfThoughts.WebApi).
+07-14 16:26:34 INF Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+07-14 16:26:34 INF Executed action Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.UpdateAsync (Cefalo.EchoOfThoughts.WebApi) in 31.499ms
+07-14 16:26:34 INF Executed endpoint 'Cefalo.EchoOfThoughts.WebApi.Controllers.StoriesController.UpdateAsync (Cefalo.EchoOfThoughts.WebApi)'
+07-14 16:26:34 INF Request finished HTTP/1.1 PUT http://localhost:7002/api/stories/2 application/json 42 - 400 - application/problem+json;+charset=utf-8 38.4484ms

@@ -15,7 +15,9 @@ namespace Cefalo.EchoOfThoughts.Domain {
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            if (!optionsBuilder.IsConfigured) {
+                optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder builder) {

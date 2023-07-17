@@ -1,13 +1,14 @@
-﻿using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+﻿using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
 using Cefalo.EchoOfThoughts.Domain.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
-    public static class Auth {
-        public static string CreateJwt(User user, IConfiguration configuration) {
+    public class AuthHelper : IAuthHelper {
+        public string CreateJwt(User user, IConfiguration configuration) {
             var key = Encoding.ASCII.GetBytes
                 (configuration["Jwt:Key"]!);
             var tokenDescriptor = new SecurityTokenDescriptor {
@@ -31,24 +32,11 @@ namespace Cefalo.EchoOfThoughts.AppCore.Helpers {
             return tokenHandler.WriteToken(token);
         }
 
-        public static TokenValidationParameters GeTokenValidationParameters(IConfiguration configuration) {
-            return new TokenValidationParameters {
-                ValidIssuer = configuration["Jwt:Issuer"],
-                ValidAudience = configuration["Jwt:Audience"],
-                IssuerSigningKey = new SymmetricSecurityKey
-                    (Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!)),
-                ValidateIssuer = true,
-                ValidateAudience = true,
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true
-            };
-        }
-
-        public static string HashPassword(string password) {
+        public string HashPassword(string password) {
             return BCrypt.Net.BCrypt.HashPassword(password);
         }
 
-        public static bool IsPasswordValid(string password, string hash) {
+        public bool IsPasswordValid(string password, string hash) {
             return BCrypt.Net.BCrypt.Verify(password, hash);
         }
     }

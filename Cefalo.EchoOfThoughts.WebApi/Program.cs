@@ -1,9 +1,10 @@
-using Cefalo.EchoOfThoughts.WebApi.Extensions;
-using Microsoft.EntityFrameworkCore;
+using Cefalo.EchoOfThoughts.AppCore.Helpers;
+using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
+using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
 using Cefalo.EchoOfThoughts.Domain;
 using Cefalo.EchoOfThoughts.WebApi;
-using Cefalo.EchoOfThoughts.AppCore.MappingProfiles;
-using Cefalo.EchoOfThoughts.AppCore.Helpers;
+using Cefalo.EchoOfThoughts.WebApi.Extensions;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 using Serilog.Events;
 
@@ -55,8 +56,8 @@ builder.Services.RegisterRepositories();
 builder.Services.RegisterServices();
 builder.Services.RegisterAuthServices(builder.Configuration);
 builder.Services.AddAuthorization();
-builder.Services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
-
+builder.Services.AddScoped<IDateTimeProvider, DateTimeProvider>();
+builder.Services.AddScoped<IAuthHelper, AuthHelper>();
 
 var app = builder.Build();
 

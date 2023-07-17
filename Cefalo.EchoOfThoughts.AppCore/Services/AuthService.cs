@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Cefalo.EchoOfThoughts.AppCore.Dtos.User;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
+using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
 using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
 using Cefalo.EchoOfThoughts.Domain.Entities;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
@@ -14,11 +14,14 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
         private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
         private readonly IDateTimeProvider _dateTimeProvider;
-        public AuthService(IUserRepository userRepository, IMapper mapper, IConfiguration configuration, IDateTimeProvider dateTimeProvider) {
+        private readonly IAuthHelper _authHelper;
+        public AuthService(IUserRepository userRepository, IMapper mapper,
+            IConfiguration configuration, IDateTimeProvider dateTimeProvider, IAuthHelper authHelper) {
             _mapper = mapper;
             _userRepository = userRepository;
             _configuration = configuration;
             _dateTimeProvider = dateTimeProvider;
+            _authHelper = authHelper;
         }
         public async Task<UserDto> CreateAsync(UserSignUpDto userDto) {
             // check if user with the email already exists
@@ -32,7 +35,7 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
                 throw new BadRequestException("An account with the username already exists!");
             }
             // hash password and save in db
-            var hashPassword = Auth.HashPassword(userDto.Password);
+            var hashPassword = _authHelper.HashPassword(userDto.Password);
 
             var userEntity = _mapper.Map<User>(userDto);
             userEntity.PasswordHash = hashPassword;
@@ -46,18 +49,18 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             return newUserDto;
         }
 
-        public async Task<string> SignInAsync(UserSignInDto userSignDto) {
+        public async Task<string> SignInAsync(UserSignInDto userSignInDto) {
             // check if email exists
-            var user = await _userRepository.FindByEmailAsync(userSignDto.Email);
+            var user = await _userRepository.FindByEmailAsync(userSignInDto.Email);
             if (user == null) {
                 throw new NotFoundException("An account with the email does not exist!");
             }
             // check if password valid
-            var isValid = Auth.IsPasswordValid(userSignDto.Password, user.PasswordHash);
+            var isValid = _authHelper.IsPasswordValid(userSignInDto.Password, user.PasswordHash);
             if (!isValid) {
                 throw new BadRequestException("Incorrect password entered!");
             }
-            return Auth.CreateJwt(user, _configuration);
+            return _authHelper.CreateJwt(user, _configuration);
         }
 
         public async Task<Payload> UpdatePasswordAsync(int userId, UserPasswordDto passwordDto) {
@@ -68,12 +71,12 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             if (!passwordDto.ConfirmPassword.Equals(passwordDto.NewPassword)) {
                 throw new BadRequestException("Password's do not match");
             }
-            var isPasswordValid = Auth.IsPasswordValid(passwordDto.OldPassword, existingUser.PasswordHash);
+            var isPasswordValid = _authHelper.IsPasswordValid(passwordDto.OldPassword, existingUser.PasswordHash);
             if (!isPasswordValid) {
                 throw new BadRequestException("Password is incorrect");
             }
 
-            var hashPassword = Auth.HashPassword(passwordDto.NewPassword);
+            var hashPassword = _authHelper.HashPassword(passwordDto.NewPassword);
             var currentTime = _dateTimeProvider.GetCurrentTime();
             existingUser.PasswordHash = hashPassword;
             existingUser.PasswordUpdatedAt = currentTime;

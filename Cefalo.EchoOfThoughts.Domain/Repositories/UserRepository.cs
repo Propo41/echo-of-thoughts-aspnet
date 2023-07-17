@@ -5,7 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Cefalo.EchoOfThoughts.Domain.Repositories {
     public class UserRepository : IUserRepository {
-        protected readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
         public UserRepository(ApplicationDbContext context) {
             _context = context;
         }

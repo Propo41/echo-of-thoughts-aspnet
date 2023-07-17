@@ -2,6 +2,7 @@
 using Cefalo.EchoOfThoughts.AppCore.Dtos.Story;
 using Cefalo.EchoOfThoughts.AppCore.Helpers;
 using Cefalo.EchoOfThoughts.AppCore.Helpers.Exceptions;
+using Cefalo.EchoOfThoughts.AppCore.Helpers.Interfaces;
 using Cefalo.EchoOfThoughts.AppCore.Services.Interfaces;
 using Cefalo.EchoOfThoughts.Domain.Entities;
 using Cefalo.EchoOfThoughts.Domain.Repositories.Interfaces;
@@ -18,11 +19,12 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
             _dateTimeProvider = dateTimeProvider;
         }
 
-        public async Task<StoryDto> CreateAsync(int authorId, StoryDto storyDto) {
+        public async Task<StoryDto> CreateAsync(int authorId, StoryCreateDto storyDto) {
             var storyEntity = _mapper.Map<Story>(storyDto);
             storyEntity.AuthorId = authorId;
             var currentTime = _dateTimeProvider.GetCurrentTime();
             storyEntity.PublishedDate = currentTime;
+            storyEntity.UpdatedAt = currentTime;
 
             var createdStory = await _storyRepository.AddAsync(storyEntity);
             return _mapper.Map<StoryDto>(createdStory);

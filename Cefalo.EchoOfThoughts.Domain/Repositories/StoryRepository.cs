@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Cefalo.EchoOfThoughts.Domain.Repositories {
     public class StoryRepository : IStoryRepository {
 
-        protected readonly ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public StoryRepository(ApplicationDbContext context) {
             _context = context;
