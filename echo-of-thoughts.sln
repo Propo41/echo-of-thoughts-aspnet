@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cefalo.EchoOfThoughts.AppCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cefalo.EchoOfThoughts.WebApi.UnitTests", "Cefalo.EchoOfThoughts.WebApi.UnitTests\Cefalo.EchoOfThoughts.WebApi.UnitTests.csproj", "{2DA33B2D-40E5-40C9-AF7B-58BAD9A6A3CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cefalo.EchoOfThoughts.Domain.UnitTests", "Cefalo.EchoOfThoughts.Domain.UnitTests\Cefalo.EchoOfThoughts.Domain.UnitTests.csproj", "{972D9B05-7404-48E1-AEFC-1595D2465C39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cefalo.EchoOfThoughts.Domain.UnitTests", "Cefalo.EchoOfThoughts.Domain.UnitTests\Cefalo.EchoOfThoughts.Domain.UnitTests.csproj", "{972D9B05-7404-48E1-AEFC-1595D2465C39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B698B8B-8C82-4CF4-89AD-E67702CA09C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
