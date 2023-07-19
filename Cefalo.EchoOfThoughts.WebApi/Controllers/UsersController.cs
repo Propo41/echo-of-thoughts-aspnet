@@ -24,18 +24,16 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         }
 
         // GET api/users/{id}
-        [HttpGet]
-        [Route("{id:int}")]
-        public async Task<UserDto> GetUserById(int id) {
+        [HttpGet("id/{id:int}")]
+        public async Task<UserDto> GetUserByIdAsync(int id) {
             _logger.LogInformation("fetching single user with id: {id}", id);
             var user = await _userService.FindAsync(id);
             return user;
         }
 
-        // GET api/users/{username}
-        [HttpGet]
-        [Route("{username:regex(^[[a-zA-Z0-9]]+$)}")]
-        public async Task<UserDto> GetUserByUsername(string username) {
+        // GET api/users/username/{username}
+        [HttpGet("username/{username:regex(^[[a-zA-Z0-9]]+$)}")]
+        public async Task<UserDto> GetUserByUsernameAsync(string username) {
             _logger.LogInformation("fetching user by username: {username}", username);
             var user = await _userService.FindAsync(username);
             return user;
