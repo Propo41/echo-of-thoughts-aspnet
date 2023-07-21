@@ -49,20 +49,22 @@ namespace Cefalo.EchoOfThoughts.WebApi.UnitTests {
         }
 
         [Fact]
-        public async void GetAsync_HasUser_ReturnsUser() {
+        public async void GetUserByIdAsync_HasUser_ReturnsUser() {
             // arrange
             var expectedUser = new UserDto {
                 Id = 1
             };
-            var id = 1;
-            A.CallTo(() => _userService.FindAsync(id)).Returns(expectedUser);
+            const int id = 1;
+            A.CallTo(() => _userService.FindAsync(A<int>._)).Returns(expectedUser);
 
             // act
-            var result = await _sut.GetAsync(id);
+            var result = await _sut.GetUserByIdAsync(id);
 
             // assert
             Assert.NotNull(result);
             Assert.Equal(expectedUser, result);
+            Assert.Equal(expectedUser.Id, result.Id);
+            A.CallTo(() => _userService.FindAsync(id)).MustHaveHappenedOnceExactly();
         }
 
         [Fact]
@@ -76,7 +78,7 @@ namespace Cefalo.EchoOfThoughts.WebApi.UnitTests {
             A.CallTo(() => _userService.FindAsync(username)).Returns(expectedUser);
 
             // act
-            var result = await _sut.GetByUsernameAsync(username);
+            var result = await _sut.GetUserByUsernameAsync(username);
 
             // assert
             Assert.NotNull(result);
