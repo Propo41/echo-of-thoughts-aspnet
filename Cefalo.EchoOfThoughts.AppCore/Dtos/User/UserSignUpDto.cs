@@ -3,12 +3,14 @@
 namespace Cefalo.EchoOfThoughts.AppCore.Dtos.User {
     public class UserSignUpDto {
         [Required]
-        [StringLength(maximumLength: 20, MinimumLength = 3)]
+        [MinLength(3)]
+        [MaxLength(20)]
         public string UserName { get; set; }
         [Required]
         public string Password { get; set; }
         [Required]
-        [StringLength(maximumLength: 30, MinimumLength = 3)]
+        [MinLength(3)]
+        [MaxLength(30)]
         public string FullName { get; set; }
         [Required]
         [EmailAddress]
