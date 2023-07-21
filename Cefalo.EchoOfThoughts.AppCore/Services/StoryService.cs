@@ -61,7 +61,6 @@ namespace Cefalo.EchoOfThoughts.AppCore.Services {
 
             existingStory.Title = storyDto.Title;
             existingStory.Body = storyDto.Body;
-            existingStory.PublishedDate = currentTime;
             existingStory.UpdatedAt = currentTime;
 
             var story = await _storyRepository.UpdateAsync(existingStory);
