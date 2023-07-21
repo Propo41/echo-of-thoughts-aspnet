@@ -3,10 +3,12 @@
 namespace Cefalo.EchoOfThoughts.AppCore.Dtos.Story {
     public class StoryCreateDto {
         [Required]
-        [StringLength(maximumLength: 600, MinimumLength = 10)]
+        [MinLength(10)]
+        [MaxLength(600)]
         public string Title { get; set; }
         [Required]
-        [StringLength(maximumLength: 3000, MinimumLength = 200)]
+        [MinLength(200)]
+        [MaxLength(3000)]
         public string Body { get; set; }
     }
 }

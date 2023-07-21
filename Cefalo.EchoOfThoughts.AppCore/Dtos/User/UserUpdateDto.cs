@@ -3,7 +3,8 @@
 namespace Cefalo.EchoOfThoughts.AppCore.Dtos.User {
     public class UserUpdateDto {
         [Required]
-        [StringLength(maximumLength: 30, MinimumLength = 3)]
+        [MinLength(3)]
+        [MaxLength(30)]
         public string FullName { get; set; }
         [Required]
         [EmailAddress]
