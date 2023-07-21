@@ -44,7 +44,7 @@ builder.Services.AddCors(o => {
     o.AddDefaultPolicy(
         policy => {
             policy
-                .WithOrigins("http://localhost:3000")
+                .WithOrigins(builder.Configuration["AllowedOrigin"])
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
@@ -65,13 +65,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment()) {
     app.UseSwagger();
     app.UseSwaggerUI();
-    // adding migration programatically
-    using var scope = app.Services.CreateScope();
-    var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-    db.Database.Migrate();
-} else {
-    // todo for production
 }
+
+// adding migration programatically
+using var scope = app.Services.CreateScope();
+var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+db.Database.Migrate();
 
 IHostApplicationLifetime lifetime = app.Lifetime;
 lifetime.ApplicationStopping.Register(() => {

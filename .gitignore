@@ -5,3 +5,5 @@
 /.vs
 **/**/bin/
 **/**/obj
+/logs/*.txt
+/logs/log-20230717.txt

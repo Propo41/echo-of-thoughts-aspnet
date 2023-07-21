@@ -28,22 +28,22 @@ namespace Cefalo.EchoOfThoughts.WebApi.Controllers {
         public async Task<Payload> LogInAsync(UserSignInDto signInDto) {
             var jwtString = await _authService.SignInAsync(signInDto);
             _logger.LogInformation("signing in, user: {user}", signInDto);
-            Response.Cookies.Append("session-token", jwtString, new CookieOptions {
-                Expires = DateTimeOffset.Now.AddDays(1),
-                HttpOnly = false,
-                Secure = false
-            });
-            return new Payload("Sign in successful!");
+            //Response.Cookies.Append("session-token", jwtString, new CookieOptions {
+            //    Expires = DateTimeOffset.Now.AddDays(1),
+            //    HttpOnly = false,
+            //    Secure = false
+            //});
+            return new Payload("Sign in successful!", jwtString);
         }
 
         // POST api/auth/sign-out
         [HttpPost("sign-out")]
         [Authorize]
         public Payload LogOut() {
-            if (Request.Cookies["session-token"] != null) {
-                Response.Cookies.Delete("session-token");
-                return new Payload("Signed out!");
-            }
+            //if (Request.Cookies["session-token"] != null) {
+            //    Response.Cookies.Delete("session-token");
+            //    return new Payload("Signed out!");
+            //}
             return new Payload("Already signed out!");
         }
 
