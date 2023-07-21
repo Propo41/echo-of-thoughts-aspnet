@@ -7,7 +7,7 @@
     <Controller_SelectedScaffolderID>MvcControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/MVC/Controller</Controller_SelectedScaffolderCategoryPath>
     <ActiveDebugProfile>echo_of_thoughts</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\.github\workflows\build-test.yml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\aliah\Desktop\Cefalo\echo-of-thoughts-aspnet\Cefalo.EchoOfThoughts.WebApi\Properties\PublishProfiles\CefaloEchoOfThoughtsWebApi20230717160323 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
